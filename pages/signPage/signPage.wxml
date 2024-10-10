@@ -1,0 +1,101 @@
+<van-dialog id="van-dialog" />
+<!-- 签到金币总金额 -->
+<view class="totalNum">
+  <view class="totalNum_warp">
+    <view class="totalNum_left">
+      <text>金币余额 (个)</text> <text class="total_text">{{totalNum}}</text>
+    </view>
+    <button class="custom-button" bind:tap="goRecharge">充值</button>
+  </view>
+</view>
+<view class="gap_warp">
+
+</view>
+<view class="container-warp">
+  <!-- 签到面板 -->
+  <view>
+    <!-- 累积签到天数 -->
+    <view class='sign_thead'>
+      <view class="sign_title">
+        <view class='mm'>已连续签到 <text>{{signNum}}</text> 天</view>
+        <view class='pp' bind:tap="bindSignRules">签到规则></view>
+      </view>
+    </view>
+    <view class="sign_content">
+      <!-- 签到天数 -->
+      <view class="head-dd">
+        <view tt:for="{{list}}" tt:key='index'>
+          <view class="head_info">
+            <view class="head_title">第{{item}}天</view>
+          </view>
+        </view>
+      </view>
+      <view class="head-iconWarp">
+        <view class="icon_warp" tt:for="{{list}}" tt:key='index'>
+          <image class="head_icon" style="scale:{{signNum+1===item?1.5:1}}" src="{{item>signNum?'../../static/img/jifen1.png':'../../static/img/choosehandle.png'}}"></image>
+          <view tt:if="{{index!=0}}" class='head_line' style="width:{{300/(list.length-1)}}rpx;background:{{item<=signNum?'#FDD24B':''}};">
+          </view>
+        </view>
+      </view>
+      <!-- 签到按钮 -->
+      <view class='the-btn'>
+        <button style="color:{{signState?'#fffbfb':'#FFFFFF'}};" type='button' class='btn' bindtap='bindSignIn' data-num="{{signNum}}" disabled='{{signState}}' data-min="{{min}}" data-max="{{max}}" data-be="{{be}}">{{signState?'今日已签到':'签到'}}</button>
+      </view>
+      <view class="tips">
+        <text>连续签到福利丰厚！未连续签到要重新开始哦~</text>
+      </view>
+    </view>
+  </view>
+  <!-- 活动面板 -->
+  <view class="task_warp">
+    <view class="task_head"><text class="task_title">做任务领金币</text></view>
+    <view class="todoList_warp">
+      <view tt:for="{{todoList}}" tt:key="index" class="todo_item">
+        <view class="todo_item_warp">
+          <text class="todes_jifen">+30</text>
+          <text class="todes_title">{{item.contentText}}</text>
+        </view>
+        <button class="todo_item_btn" style="color:{{item.state?'#F82B25':'#FFFFFF'}};background: {{item.state?'#FEDEDA':'#F82B25'}};" disabled="{{item.state}}">{{item.state==true?'领取' :'去完成'}}</button>
+      </view>
+    </view>
+  </view>
+  <!-- 底部图片 -->
+  <view class="bottom_warp">
+    <view class="bottom_content bottom_left" bind:tap="gochargePage">
+      <image class="custom-icon" src="../../static/img/chongzhi.png" />
+      <text class="bottom_title">特惠充值</text>
+    </view>
+    <view class="bottom_content bottom_right" bind:tap="gochargePage">
+      <image class="custom-icon" src="../../static/img/huiyuan.png" />
+      <text class="bottom_title">开通Vip</text>
+    </view>
+  </view>
+  <!-- 签到规则弹窗 -->
+  <van-dialog use-slot title="签到规则" show="{{ show }}" bind:close="onClose">
+    <view class="content_warp">
+      <view class="content_text">
+        1、每7天为一个签到周期,用户连续签满7天,完成一个签到周期,下次签到开始重新计算新的签到周期。
+      </view>
+      <view class="content_text">
+        2、用户每次签到均可获得相应的奖励,连续签到7天可获得更高奖励。
+      </view>
+      <view class="content_text">
+        3、若途中漏签,则从第一天开始重新计算新的签到周期
+      </view>
+    </view>
+  </van-dialog>
+  <!-- 签到成功提示弹窗 -->
+  <van-dialog use-slot title="签到成功" show="{{ signShow }}" bind:close="onsignClose">
+    <view class="signTips_warp">
+      <view>
+        已累积签到 {{signNum}} 天，恭喜获得
+      </view>
+      <view class="signTips_image_warp">
+        <image class="signTips_image" src="../../static/img/jinbi.png" />
+      </view>
+      <view>
+        5金币
+      </view>
+    </view>
+  </van-dialog>
+</view>

@@ -1,0 +1,66 @@
+<!-- 用户信息：头像，id 会员信息-->
+<view class="user_content">
+  <view class="user_warp">
+    <view class="user_info">
+      <image class="user_info_img" src="{{avatarUrl}}" mode="" />
+      <text class="user_info_id">ID:{{id}}</text>
+    </view>
+    <view class="user_vip_warp">
+      <view class="user_vip_info">
+        <view class="user_vip_tag">VIP会员</view>
+        <view class="user_vip_tips">当前会员已过期</view>
+      </view>
+      <image class="user_vip_img" src="../../static/img/huiyuan.png" mode="" />
+    </view>
+  </view>
+</view>
+<view class="vip_warp">
+  <!-- 会员tips -->
+  <van-grid direction="horizontal" column-num="4" border="{{ false }}">
+    <van-grid-item use-slot tt:for="{{iconList}}" tt:key="index">
+      <view class="icon_list_warp">
+        <image class="custom-icon" src="{{item.icon}}" />
+        <text class="icon_item_desc">{{item.desc}}</text>
+      </view>
+    </van-grid-item>
+  </van-grid>
+  <!-- 会员费用list -->
+  <van-grid column-num="3" border="{{ false }}">
+    <van-grid-item use-slot tt:for="{{chargeList}}" tt:key="index" data-index="{{index}}" data-original_price="{{item.original_price}}" data-mon="{{item.mon}}" bind:click="checkCharge">
+      <view class="charge_item" style="border: 3px solid {{current===index?'#DFBB82':'#B1B1B1'}};background: {{current===index?'#FCF0DC':'#FFFFFF'}};color: {{current===index?'#6D4E19':'#060400'}};">
+        <text class="charge_item_discount">{{item.discount}}</text>
+        <view class="charge_item_mon">{{item.mon}}</view>
+        <view class="charge_item_Oprice">{{item.original_price}}</view>
+        <view class="charge_item_Dprice">{{item.discount_price}}</view>
+        <!-- <view class="charge_item_checked" tt:if="{{current===index}}">
+          √
+        </view> -->
+      </view>
+    </van-grid-item>
+  </van-grid>
+  <!-- 开通会员特权 -->
+  <view class="btn_warp">
+    <view class="btns" bind:tap="openMembership">开通会员特权</view>
+  </view>
+</view>
+<!-- 精选好剧 -->
+<view class="jing-xuan-content">
+  <van-cell border="{{false}}" is-link value="查看更多">
+    <view class="jing-xuan-title" slot="title">
+      <view class="van-cell-text">
+        <image class="van-cell-img" src="../../static/img/tuijian.png" />精选好剧
+      </view>
+    </view>
+  </van-cell>
+  <van-grid column-num="3" border="{{ false }}">
+    <van-grid-item use-slot tt:for="{{jingXuanList}}" tt:key="index">
+      <image class="jing-xuan-img" src="{{item.img}}" bindtap="goPlayVideo"></image>
+      <view class="jing-xuan-desc">
+        <view class="desc">{{item.desc}}</view>
+        <view class="num">
+          {{item.views_count||'末日·77集'}}
+        </view>
+      </view>
+    </van-grid-item>
+  </van-grid>
+</view>

@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+      "van-transition": "/miniprogram_npm/@vant/weapp/transition/index",
+      "van-progress": "/miniprogram_npm/@vant/weapp/progress/index",
+      "van-button": "/miniprogram_npm/@vant/weapp/button/index"
+    },
+    "navigationBarTitleText": "福利"
+  }

@@ -1,0 +1,66 @@
+.thead {
+    line-height: 32px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.progress_content {
+    padding: 20px 6px;
+    height: 110px;
+    overflow-x: hidden;
+}
+
+.progress_warp {
+    position: relative;
+}
+
+/* 进度条tips */
+.progress_top {
+    position: absolute;
+    font-size: 10px;
+    height: 24px;
+    line-height: 24px;
+    width: 160px;
+    top: 50%;
+    border-radius: 50%;
+    transform: translateY(-100%);
+}
+
+/* 进度条 */
+.customClass {
+    width: 100vw;
+}
+
+/* 进度条下方 */
+.icon_warp {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 50%;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.head_icon_warp {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(0, 50%);
+    transform: translate(-50%, 10%);
+}
+
+.head_icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.head_icon_title {
+    font-size: 12px;
+    margin: 8px 0;
+}
+
+.head_icon_text {
+    font-size: 8px;
+    margin: 8px 0;
+}

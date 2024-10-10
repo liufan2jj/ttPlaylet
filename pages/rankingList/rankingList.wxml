@@ -1,0 +1,18 @@
+<van-skeleton title avatar row="8" loading="{{ loading }}">
+  <van-grid column-num="3" border="{{ false }}">
+    <van-grid-item use-slot tt:for="{{list}}" tt:key="index">
+      <view class="jing-xuan_item">
+        <view class="jing-xuan_tips" tt:if="{{index<=2}}">{{index+1}}</view>
+        <image class="jing-xuan-img" src="{{item.cover_url}}" bindtap="goPlayVideo"></image>
+        <view class="jing-xuan-desc">
+          <view class="desc">{{item.name}}</view>
+          <view class="num">
+            {{item.views_count||'21.4万搜索'}}
+          </view>
+        </view>
+      </view>
+      <view tt:if="{{loadingMore&&list.length>=10}}" class="loading_tips">滑动加载更多...</view>
+      <view tt:if="{{noneMore&&list.length>=10}}" class="loading_tips">暂无更多数据...</view>
+    </van-grid-item>
+  </van-grid>
+</van-skeleton>

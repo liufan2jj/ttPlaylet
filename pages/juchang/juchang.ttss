@@ -1,0 +1,116 @@
+.van-search {
+    background-color: #F41919 !important;
+}
+
+.van-search__content {
+    background: #EEF3F4 !important;
+    border-radius: 30rpx 30rpx 30rpx 30rpx !important;
+}
+
+/* 轮播图*/
+.swiper_warp {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, #f41919, #fc4a40, #ff6c63, #ff8a84, #ffa6a4, #feb6bb, #fcc7cf, #f8d8e0, #f7e2ed, #f7ecf6, #f9f6fc, #ffffff);
+}
+
+swiper {
+    width: 704rpx;
+    height: 396rpx;
+}
+
+swiper image {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+/* 排行福利Vip*/
+.custom-icon-warp {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #efefef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #efefef;
+    border-radius: 12px;
+}
+
+.custom-class {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.custom-icon {
+    width: 67rpx;
+    height: 71rpx;
+}
+
+.custom-title {
+    font-weight: 500;
+    font-size: 34rpx;
+    color: #030004;
+    line-height: 59rpx;
+    font-style: normal;
+    text-transform: none;
+    text-align: center;
+}
+
+/* 精选好剧 */
+/* .jing-xuan-title {
+    display: flex;
+    align-items: center;
+  } */
+
+.van-cell-img {
+    width: 37rpx;
+    height: 41rpx;
+    vertical-align: text-bottom;
+    margin-right: 12rpx;
+}
+
+.van-cell-text {
+    font-weight: 500;
+    font-size: 33rpx;
+    color: #000504;
+    line-height: 58rpx;
+    font-style: normal;
+    text-transform: none;
+}
+
+.jing-xuan-img {
+    width: 212rpx;
+    height: 265rpx;
+    background: #EBFDFB;
+    border-radius: 21rpx 21rpx 21rpx 21rpx;
+}
+
+.jing-xuan-desc {
+    width: 100%;
+    font-weight: 400;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+}
+
+.jing-xuan-desc .desc {
+    font-size: 28rpx;
+    color: #000307;
+    line-height: 48rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.jing-xuan-desc .num {
+    font-size: 22rpx;
+    color: #999798;
+    line-height: 38rpx;
+}
+
+.loading_tips {
+    font-size: 12px;
+    text-align: center;
+}

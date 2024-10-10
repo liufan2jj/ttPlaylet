@@ -1,0 +1,31 @@
+<view class="expire_tips">
+  <view class="expire_text">开启卡券即将过期提醒</view>
+  <button class="expire_btn">立即订阅</button>
+  <view class="expire_close">×</view>
+</view>
+<view class="list_warp">
+  <view wx:for="{{list}}" wx:key="index" class="xx">
+    <view class="xx_warp">
+      <image src="{{item.img}}" class="xx_tx"></image>
+      <view class="xx_userWarp">
+        <text class="xx_mz">{{item.title}}</text>
+        <view>
+          <text class="xx_title">{{item.desc}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="btns">
+      <button data-index="{{index}}" bind:tap="onUsecard" disabled="{{item.state}}" class="custom-button {{item.state? 'active' : 'defaut'}}">{{item.state?'已激活':'立即使用'}}</button>
+    </view>
+  </view>
+</view>
+<van-dialog show-confirm-button="{{false}}" use-slot show="{{ show }}" bind:getuserinfo="getUserInfo">
+  <view class="dialog_warp">
+    <view class="dialog_top">激活后需在有效期内用权益</view>
+    <view class="dialog_center">是否激活{{cardName}}？</view>
+    <view class="dialog_bottom">
+      <button class="bottom_left" bind:tap="onCancel">取消</button>
+      <button class="bottom_right" bind:tap="onConfirm">确认</button>
+    </view>
+  </view>
+</van-dialog>

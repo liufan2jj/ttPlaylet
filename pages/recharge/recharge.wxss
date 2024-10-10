@@ -1,0 +1,200 @@
+page {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #F6F6F6;
+}
+
+.jing-xuan-title {
+  font-weight: 500;
+  font-size: 35rpx;
+  color: #000504;
+  line-height: 58rpx;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  padding: 20rpx 0;
+}
+
+.van-cell-img {
+  width: 20px;
+  height: 20px;
+}
+
+.van-cell-text {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* 余额 */
+.xx_warp {
+  font-weight: 400;
+  font-size: 35rpx;
+  color: #070400;
+  line-height: 71rpx;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+
+.xx_num {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.xx_title {
+  font-size: 14px;
+}
+
+/* banner图片 */
+.banner_warp {
+  background-image: linear-gradient(to right bottom, #f0f0f0, #e6e6e6, #dbdbdc, #d1d1d3, #c6c7c9, #c2c4c6, #bec1c3, #babec0, #bcc1c3, #bdc4c6, #bfc8c9, #c1cbcb);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 82px;
+  position: relative;
+}
+
+.banner_content {
+  color: rgb(58, 56, 56);
+  padding: 10px;
+}
+
+.banner_title {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.banner_text {
+  font-size: 16px;
+  color: #797575;
+}
+
+.banner_img {
+  width: 64px;
+  height: 64px;
+  transform: rotate(13deg);
+  position: absolute;
+  right: 2px;
+  opacity: 0.44;
+  top: 16px;
+}
+
+.charge_title {
+  padding: 0 20rpx;
+  font-weight: 500;
+  font-size: 35rpx;
+  color: #080500;
+  line-height: 77rpx;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  background-color: #FFFFFF;
+}
+
+/* 充值列表 */
+.charge_item {
+  text-align: center;
+  position: relative;
+  width: 202rpx;
+  height: 225rpx;
+  background: #FFFFFF;
+  border-radius: 14rpx 14rpx 14rpx 14rpx;
+  border: 3rpx solid #B1B1B1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.charge_item_discount {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100rpx;
+  height: 42rpx;
+  line-height: 42rpx;
+  background: radial-gradient(0% 0% at 0% 0%, #EC6666 0%, #E60505 0%), #E8AE56;
+  border-radius: 0rpx 14rpx 0rpx 14rpx;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  transform: translate(-2.78rpx, -50%);
+}
+
+.charge_item_Oprice {
+  font-weight: 500;
+  font-size: 48rpx;
+  color: #060400;
+}
+
+.charge_item_Dprice {
+  font-weight: 400;
+  font-size: 23rpx;
+  color: #060400;
+}
+
+.charge_item_checked {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(25%, -25%);
+  width: 28px;
+  height: 28px;
+  color: #e43d3d;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* 充值提示 */
+.charge_tip_warp {
+  background-color: #FFFFFF;
+  font-weight: 400;
+  font-size: 25rpx;
+  color: #080500;
+  line-height: 44rpx;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  padding: 0 20rpx;
+}
+
+.charge_check {
+  font-weight: 400;
+  font-size: 25rpx;
+  color: #646466;
+  line-height: 44rpx;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+
+.charge_check_warp {
+  position: absolute;
+  bottom: env(safe-area-inset-bottom);
+  margin: 0 auto;
+}
+
+.check_btns {
+  display: flex;
+  align-items: center;
+}
+
+.charge_rule {
+  color: #E60505;
+}
+
+.custom_btn {
+  width: 691rpx;
+  height: 80rpx;
+  background: radial-gradient(0% 0% at 0% 0%, #EC6666 0%, #E60505 0%), #FCE6E6;
+  border-radius: 40rpx 40rpx 40rpx 40rpx;
+  font-family: SourceHanSansSC, SourceHanSansSC;
+  font-weight: 500;
+  font-size: 42rpx;
+  color: #FCE6E6;
+  line-height: 80rpx;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}

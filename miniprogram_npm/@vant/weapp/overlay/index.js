@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var component_1=require("../common/component");(0,component_1.VantComponent)({props:{show:Boolean,customStyle:String,duration:{type:null,value:300},zIndex:{type:Number,value:1},lockScroll:{type:Boolean,value:!0},rootPortal:{type:Boolean,value:!1}},methods:{onClick:function(){this.$emit("click")},noop:function(){}}});
+//# sourceMappingURL=index.js.map

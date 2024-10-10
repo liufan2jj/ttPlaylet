@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index"
+  },
+  "navigationBarTitleText": "签到",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#f41919",
+  "backgroundColorTop": "#F41919",
+  "backgroundColorBottom": "#f9f6fc"
+}

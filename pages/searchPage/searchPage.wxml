@@ -1,0 +1,28 @@
+<!-- 搜索栏 -->
+<van-field focus="{{true}}" title-width="23rpx" value="{{ value }}" bind:confirm="onConfirm" bind:change="onChange" center clearable placeholder="请输入搜索关键词" border="{{ false }}" custom-style="height: 65rpx;background: #E7EAEB;border-radius: 30rpx 30rpx 30rpx 30rpx;" use-button-slot>
+  <view slot="label" class="label-class">
+    <image class="custon_img" src="../../static/img/sousuo.png" mode="" />
+  </view>
+  <text slot="button" bind:tap="onClick">| 搜索</text>
+</van-field>
+<!-- 搜索列表 -->
+<view class="search_warp">
+  <van-cell border="{{false}}">
+    <view class="jing-xuan-title" slot="title">
+      <view class="van-cell-text">热剧推荐
+        <image class="van-cell-img" src="../../static/img/remenhot.png" />
+      </view>
+    </view>
+  </van-cell>
+  <van-grid column-num="2" border="{{ false }}">
+    <van-grid-item use-slot tt:for="{{list}}" tt:key="index">
+      <view class="jing-xuan_item">
+        <view class="jing-xuan_tips" tt:if="{{index<=2}}">{{index+1}}</view>
+        <image class="jing-xuan-img" src="{{item.cover_url}}" bindtap="goPlayVideo"></image>
+        <view class="jing-xuan-desc">
+          <view class="desc">{{item.name}}</view>
+        </view>
+      </view>
+    </van-grid-item>
+  </van-grid>
+</view>

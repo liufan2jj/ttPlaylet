@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-grid": "/miniprogram_npm/@vant/weapp/grid/index",
+    "van-grid-item": "/miniprogram_npm/@vant/weapp/grid-item/index",
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index"
+  },
+  "navigationBarTitleText": "开通会员",
+  "navigationBarBackgroundColor": "#efefef"
+}

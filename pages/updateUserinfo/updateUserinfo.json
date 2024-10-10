@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-field": "/miniprogram_npm/@vant/weapp/field/index"
+  },
+  "navigationBarTitleText": "修改昵称和头像"
+}

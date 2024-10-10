@@ -1,0 +1,302 @@
+page {
+  background: #f9f6fc;
+}
+
+.totalNum {
+  padding: 0 10px;
+  background-color: #F41919;
+}
+
+.gap_warp {
+  height: 238rpx;
+  background-image: linear-gradient(to bottom, #f41919, #fc4a40, #ff6c63, #ff8a84, #ffa6a4, #feb6bb, #fcc7cf, #f8d8e0, #f7e2ed, #f7ecf6, #f9f6fc, #f9f6fc);
+}
+
+.totalNum_warp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 190rpx;
+}
+
+.totalNum_left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-button {
+  width: 175rpx;
+  height: 63rpx;
+  background: #FFFFFF;
+  border-radius: 32rpx 32rpx 32rpx 32rpx;
+  font-weight: 400;
+  font-size: 35rpx;
+  color: #F41919;
+  line-height: 63rpx;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  margin: 0;
+  padding: 0;
+}
+
+.total_text {
+  font-family: DIN, DIN;
+  font-weight: bold;
+  font-size: 75rpx;
+  color: #FFFFFF;
+  font-style: normal;
+  text-transform: none;
+}
+
+.container-warp {
+  padding: 0 10px;
+  position: relative;
+  top: -238rpx;
+}
+
+/* 签到面板 */
+.sign_thead {
+  background-image: linear-gradient(to right, #f7ebd3, #f7eacf, #f7e8cb, #f6e7c7, #f6e6c3, #f6e5be, #f6e4ba, #f6e3b5, #f6e1ae, #f6dfa7, #f6dd9f, #f6db98);
+  border-radius: 14rpx 14rpx 0 0;
+  padding: 0 6px;
+}
+
+.sign_content {
+  border-top: none;
+  padding: 8px;
+  border-radius: 0rpx 0rpx 14rpx 14rpx;
+  background-color: #ffffff;
+}
+
+.sign_title {
+  display: flex;
+  justify-content: space-between;
+  line-height: 68rpx;
+}
+
+.mm {
+  font-weight: 500;
+  font-size: 33rpx;
+  color: #000000;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+
+.pp {
+  font-weight: 400;
+  font-size: 23rpx;
+  color: #636161;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+
+/* 天数列表样式 */
+.head-dd {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 32px;
+}
+
+.head_info {
+  text-align: center;
+}
+
+.head_title {
+  font-size: 26rpx;
+  line-height: 28rpx;
+  color: #333333;
+}
+
+/* 签到图标和金币样式 */
+.head-iconWarp {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  height: 56px;
+}
+
+.icon_warp {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.head_icon {
+  width: 60rpx;
+  height: 60rpx;
+  z-index: 1;
+}
+
+.head_line {
+  position: absolute;
+  top: 50%;
+  left: -35%;
+  transform: translate(-50%, -50%);
+  height: 2rpx;
+}
+
+/* 签到按钮 */
+.the-btn {
+  padding: 4px;
+}
+
+.btn {
+  background: #F82B25;
+  border-radius: 38rpx 38rpx 38rpx 38rpx;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  width: 98%;
+}
+
+.tips {
+  font-weight: 400;
+  font-size: 26rpx;
+  color: #636161;
+  font-size: 12px;
+  padding: 10px 10px;
+  text-align: center;
+}
+
+/* 活动面板 */
+.task_warp {
+  margin: 20px 0;
+}
+
+.task_head {
+  background-image: linear-gradient(to right, #f7ebd3, #f7eacf, #f7e8cb, #f6e7c7, #f6e6c3, #f6e5be, #f6e4ba, #f6e3b5, #f6e1ae, #f6dfa7, #f6dd9f, #f6db98);
+  border-radius: 14rpx 14rpx 0 0;
+  padding: 0 6px;
+  line-height: 68rpx;
+}
+
+.task_title {
+  font-weight: 500;
+  font-size: 33rpx;
+  color: #000000;
+  font-style: normal;
+  text-transform: none;
+}
+
+.todoList_warp {
+  padding: 8px;
+  border-radius: 0 0 14rpx 14rpx;
+  background-color: #ffffff;
+}
+
+.todo_item {
+  display: flex;
+  justify-content: space-between;
+  line-height: 88rpx;
+  align-items: center;
+  padding: 14rpx 0px;
+}
+
+.todo_item_warp {
+  display: flex;
+  align-items: center;
+}
+
+.todo_item_btn {
+  height: 46rpx;
+  width: 132rpx;
+  font-weight: 500;
+  font-size: 25rpx;
+  line-height: 46rpx;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+
+.todes_jifen {
+  width: 61rpx;
+  height: 61rpx;
+  background: #F41919;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 500;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todes_title {
+  margin-left: 4px;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #110101;
+  line-height: 58rpx;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+
+/* 底部按钮 */
+.bottom_warp {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.bottom_content {
+  width: 274rpx;
+  height: 72rpx;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.bottom_left {
+  background: radial-gradient(0% 0% at 0% 0%, #EC6666 0%, #E60505 0%), #BF8A68;
+  color: #FFFFFF;
+}
+
+.bottom_right {
+  color: #AB660B;
+  background: radial-gradient(0% 0% at 0% 0%, #F6DB98 0%, #F7EBD3 0%);
+
+}
+
+.bottom_title {
+  border-radius: 14rpx 14rpx 14rpx 14rpx;
+  font-weight: 500;
+  font-size: 31rpx;
+  line-height: 64rpx;
+  font-style: normal;
+  text-transform: none;
+}
+
+.custom-icon {
+  width: 41rpx;
+  height: 37rpx;
+}
+
+/* 签到规则弹窗样式 */
+.content_warp {
+  padding: 10px;
+  line-height: 24px;
+}
+
+.signTips_warp {
+  text-align: center;
+  line-height: 32px;
+}
+
+.signTips_image_warp {
+  display: flex;
+  justify-content: center;
+}
+
+.signTips_image {
+  width: 40px;
+  height: 40px;
+}

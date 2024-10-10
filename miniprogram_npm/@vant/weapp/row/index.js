@@ -1,0 +1,2 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var component_1=require("../common/component"),relation_1=require("../common/relation");(0,component_1.VantComponent)({relation:(0,relation_1.useChildren)("col",(function(t){var e=this.data.gutter;e&&t.setData({gutter:e})})),props:{gutter:{type:Number,observer:"setGutter"}},methods:{setGutter:function(){var t=this;this.children.forEach((function(e){e.setData(t.data)}))}}});
+//# sourceMappingURL=index.js.map

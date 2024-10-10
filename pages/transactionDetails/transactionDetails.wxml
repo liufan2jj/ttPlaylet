@@ -1,0 +1,14 @@
+<view class="tabsWarp">
+  <view class="{{active==index?'activeClass':''}}" tt:for="{{listTabs}}" tt:key="index" data-index="{{index}}"
+    bind:click="onChange">{{item.title}}</view>
+</view>
+<view>
+  <van-cell-group tt:if="{{active==0}}">
+    <van-cell center tt:for="{{consumptionList}}" tt:key="index" title="{{item.title}}" value="{{item.gold}}"
+      label="{{item.time}}" border="{{ true }}" />
+  </van-cell-group>
+  <van-cell-group tt:elif="{{active==1}}">
+    <van-cell center tt:for="{{rechargeList}}" tt:key="index" title="{{item.title}}" value="{{item.gold}}"
+      label="{{item.time}}" border="{{ true }}" />
+  </van-cell-group>
+</view>

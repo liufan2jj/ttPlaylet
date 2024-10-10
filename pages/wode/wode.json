@@ -1,0 +1,13 @@
+{
+    "usingComponents": {
+        "van-button": "/miniprogram_npm/@vant/weapp/button/index",
+        "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+        "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+        "van-overlay": "/miniprogram_npm/@vant/weapp/overlay/index"
+    },
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "个人中心",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#F41919",
+    "backgroundColorTop": "#F41919"
+}

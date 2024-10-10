@@ -1,0 +1,3 @@
+<van-cell center title="自动解锁" label="关闭自动解锁下一集">
+  <van-switch checked="{{ checked }}" inactive-color="#E60606" active-color="#07c160" bind:change="onChange" />
+</van-cell>

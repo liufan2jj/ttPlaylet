@@ -1,0 +1,66 @@
+<view class="top_warp">
+    <!-- 用户信息：头像，呢称 /登录 -->
+    <view class="xx">
+        <view class="xx_warp">
+            <image style="border:{{avatarUrl?'':'1px solid #efefef'}};" src="{{avatarUrl}}" bindtap="goUserInfo"
+                class="xx_tx"></image>
+            <view class="xx_userWarp">
+                <text class="xx_mz">{{name}}</text>
+                <view>
+                    <text class="xx_num">ID:{{id}}</text>
+                    <!-- <image class="xx_copy" src="../../static/img/fuzhiwenjian.png" data-copy_text="{{id}}" bind:tap="copyText" /> -->
+                </view>
+                <view>
+                    <text class="xx_title">我的金币：{{view_point}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="btns">
+            <button class="custom-button" bind:tap="goRecharge">充值金币</button>
+        </view>
+    </view>
+    <!-- banner插图 -->
+    <view class="banner_warp" bind:tap="goRecharge">
+        <view tt:if="{{vip_type<=0}}" class="banner_content">
+            <text class="banner_title">开通会员</text>
+            <text class="banner_text">开通会员, 全站影片免费看</text>
+        </view>
+        <view tt:elif="{{vip_type>0}}" class="banner_content">
+            <text class="banner_title">{{vipTimeTips}}</text>
+            <!-- <text class="banner_text">尊贵的会员, 全站影片免费看</text> -->
+        </view>
+        <!-- <image class="banner_img" src="../../static/img/iconvip01.png" /> -->
+        <view class="clip_left"></view>
+        <view class="clip_right"></view>
+    </view>
+</view>
+<!-- 循环数组 mySet  -->
+<view class="van-cell-warp">
+    <van-cell is-link tt:for="{{mySet}}" tt:key="index" bind:click="onMySet" data-type="{{item.name}}">
+        <view class="title-class" slot="title">
+            <image class="custom-icon" src="{{item.img}}" />
+            <view class="van-cell-text">
+                {{item.name}}
+            </view>
+            <button class="content-btn" tt:if="{{item.name=='联系客服'}}" open-type="contact" bindcontact="handleContact"
+                session-from="sessionFrom">{{item.name}}</button>
+        </view>
+    </van-cell>
+</view>
+<!-- 收藏小程序遮罩层Tips -->
+<van-overlay show="{{ overlayShow }}" bind:click="onClickHide">
+    <view class="overlay_wrapper">
+        <image class="overlay_img" style="transform: translate(calc(-100% + {{rightPosition}}px), 0px);"
+            src="../../static/img/overlay_tips.png" mode="" />
+    </view>
+</van-overlay>
+<!-- 底部图片 -->
+<view class="bottom_content">
+    <view class="bottom_warp">
+        <view class="bottom">
+            <text class="bottom_title">看我! 这里可以免费领金币</text>
+            <van-button round size="mini" bind:tap="getsignPage">立即领取</van-button>
+        </view>
+        <image class="bottom_img" src="../../static/img/chiyouzongfene.png" />
+    </view>
+</view>

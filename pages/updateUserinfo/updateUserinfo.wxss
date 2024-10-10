@@ -1,0 +1,40 @@
+.image-warp {
+  display: flex;
+  justify-content: space-between;
+  color: #646566;
+  padding: 0 16px;
+  font-size: 16px;
+}
+
+.image-title {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #646566;
+}
+
+.avatar-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+}
+
+.avatar-wrapper image {
+  width: 100%;
+  height: 100%;
+}
+
+.btnsWarp {
+  padding: 20px;
+}
+
+.btns {
+  height: 36px;
+  line-height: 36px;
+  background: rgb(236, 135, 67);
+  border-radius: 16px;
+  text-align: center;
+  color: #fff;
+}

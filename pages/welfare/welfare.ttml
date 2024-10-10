@@ -1,0 +1,32 @@
+<van-transition show="{{ signNum>total }}" name="slide-down" custom-class="block">
+    <view class="thead">奖励全部解锁，当前累计消费{{signNum}}</view>
+</van-transition>
+<view class="progress_content">
+    <view class="progress_warp">
+        <!-- 进度条上方tips -->
+        <view tt:if="{{signNum<=total}}" class="progress_top" style="left: {{position}};">
+            距离{{nextTarget}}还差{{difference}}</view>
+        <!-- 进度条 -->
+        <van-progress class="customClass" show-pivot="{{false}}" stroke-width="2px" percentage="{{percentage}}">
+        </van-progress>
+        <!-- 进度条下方 -->
+        <view class="icon_warp"
+            style="background:{{item.num<=signNum?'#2ebb7a':'#e61717'}};left: {{(item.num*ratio)/total+'%'}};"
+            tt:for="{{steps}}" tt:key='index'>
+            <view class="head_icon_warp">
+                <view class="head_icon">
+                    <view class="head_icon_title">
+                        {{item.desc}}
+                    </view>
+                    <view>
+                        <van-button disabled="{{item.num>signNum}}" round size="mini">领取</van-button>
+                    </view>
+                    <view class="head_icon_text">
+                        购物满{{item.num}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<button bind:tap="clickStep">++</button>

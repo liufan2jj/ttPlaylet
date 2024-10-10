@@ -1,0 +1,45 @@
+<view class="jing-xuan-title" slot="title">
+  <view class="van-cell-text">充值后可购买剧集</view>
+</view>
+<!-- 余额 -->
+<view class="xx_warp">
+  余额：{{balance}}金币
+</view>
+<!-- banner插图 -->
+<!-- <view class="banner_warp" bind:tap="gomemberPage">
+  <view class="banner_content">
+    <text class="banner_text">开通会员, </text><text class="banner_title">免费</text><text class="banner_text">看剧</text>
+  </view>
+  <image class="banner_img" src="../../static/img/iconvip01.png" />
+</view> -->
+<view class="charge_title">
+  点击对应金额进行微信充值
+</view>
+<!-- 充值列表 -->
+<van-grid column-num="3" border="{{ false }}">
+  <van-grid-item use-slot tt:for="{{chargeList}}" tt:key="index" data-index="{{index}}" data-originalprice="{{item.original_price}}" bind:click="checkCharge">
+    <view class="charge_item" style="border: 2.78rpx solid {{current===index?'#A66507':'#B1B1B1'}};background: {{current===index?'radial-gradient( 0% 0% at 0% 0%, #FBD097 0%, #FCEACB 0%)':'#FFFFFF'}};">
+      <text tt:if="{{item.discount}}" class="charge_item_discount">{{item.discount}}</text>
+      <!-- <view class="charge_item_mon">{{item.mon}}</view> -->
+      <view class="charge_item_Oprice">{{item.original_price}}</view>
+      <view class="charge_item_Dprice">{{item.discount_price}}</view>
+      <!-- <view class="charge_item_checked" tt:if="{{current===index}}">
+        √
+      </view> -->
+    </view>
+  </van-grid-item>
+</van-grid>
+<!-- 充值提示 -->
+<view class="charge_tip_warp">
+  <view class="charge_tips">金币和会员属于虚拟商品，一经购买不得退换；</view>
+  <view class="charge_tips">充值后金币可能有延迟， 正常 2 分钟内到账， 若30分钟后仍未到账请与客服联系；</view>
+  <view class="charge_tips">未满18岁的未成年人应在父母或其他监护人的陪同下进行相关付费操作。</view>
+</view>
+<view class="charge_check_warp">
+  <view class="check_btns">
+    <van-checkbox value="{{ checked }}" checked-color="#E60606" bind:change="onChange">
+    </van-checkbox>
+    <view class="charge_check">请阅读并知悉 <text bind:tap="gochargeRule" class="charge_rule">《充值规则》</text>、<text bind:tap="gomemberAgreement" class="charge_rule">《会员服务协议》</text></view>
+  </view>
+  <button bind:tap="openMembership" disabled="{{!checked}}" style="color: {{!checked?'#fff':''}};font-size:{{!checked?'20rpx':''}} ;" class="custom_btn">{{checked?total:'请阅读并知悉充值规则》及《会员服务协议》勾选后确认支付'}}</button>
+</view>

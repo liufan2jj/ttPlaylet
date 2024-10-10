@@ -1,0 +1,26 @@
+@import './miniprogram_npm/@vant/weapp/common/index.wxss';
+
+body,
+html {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+button::after {
+  border: none;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+}
+
+page {
+  padding-bottom: 20px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+}

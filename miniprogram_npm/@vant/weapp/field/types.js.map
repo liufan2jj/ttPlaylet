@@ -1,0 +1,1 @@
+{"version":3,"file":"node_modules\\@vant\\weapp\\lib\\field\\types.js","names":["Object","defineProperty","exports","value"],"sources":["node_modules\\@vant\\weapp\\lib\\field\\types.js"],"sourcesContent":["\"use strict\";\nObject.defineProperty(exports, \"__esModule\", { value: true });\n"],"mappings":"AAAA,aACAA,OAAOC,eAAeC,QAAS,aAAc,CAAEC,OAAO","ignoreList":[]}

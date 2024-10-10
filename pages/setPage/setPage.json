@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "van-switch": "/miniprogram_npm/@vant/weapp/switch/index"
+  },
+  "navigationBarTitleText": "设置"
+}

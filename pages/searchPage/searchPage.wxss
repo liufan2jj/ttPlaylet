@@ -1,0 +1,86 @@
+page {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.label-class {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.custon_img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 搜索栏样式 */
+.van-search {
+  padding: 0 !important;
+}
+
+.van-search__content {
+  width: 699rpx;
+  height: 65rpx;
+  background: #EEF3F4 !important;
+  border-radius: 30rpx 30rpx 30rpx 30rpx !important;
+}
+
+/* 搜索列表样式 */
+.jing-xuan_item {
+  width: 100%;
+  position: relative;
+}
+
+.jing-xuan_tips {
+  position: absolute;
+  left: 0;
+  top: -4px;
+  background-image: linear-gradient(212deg, #cccccc 50%, rgba(255, 255, 255, 0) 50%), linear-gradient(148deg, #cccccc 50%, rgba(255, 255, 255, 0) 50%);
+  width: 28px;
+  height: 61px;
+  text-align: center;
+}
+
+/* .jing-xuan-title {
+  display: flex;
+  align-items: center;
+} */
+
+.van-cell-img {
+  width: 37rpx;
+  height: 41rpx;
+  vertical-align: text-bottom;
+  margin-left: 6rpx;
+}
+
+.van-cell-text {
+  font-weight: 500;
+  font-size: 33rpx;
+  color: #000504;
+  line-height: 58rpx;
+  font-style: normal;
+  text-transform: none;
+}
+
+.jing-xuan-img {
+  width: 335rpx;
+  height: 419rpx;
+  background: #EBFDFB;
+  border-radius: 21rpx 21rpx 21rpx 21rpx;
+}
+
+
+.jing-xuan-desc {
+  width: 100%;
+  font-style: normal;
+  text-transform: none;
+}
+
+.jing-xuan-desc .desc {
+  font-size: 28rpx;
+  color: #000307;
+  line-height: 48rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

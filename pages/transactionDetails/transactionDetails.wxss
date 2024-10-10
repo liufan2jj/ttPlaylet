@@ -1,0 +1,15 @@
+.tabsWarp {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    line-height: 44px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #fff;
+}
+
+.activeClass {
+    border-bottom: 2px solid #ee0a24;
+}

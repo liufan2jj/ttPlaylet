@@ -1,0 +1,54 @@
+{
+    "pages": [
+        "pages/welfare/welfare",
+        "pages/bingeWatching/bingeWatching",
+        "pages/juchang/juchang",
+        "pages/wode/wode",
+        "pages/signPage/signPage",
+        "components/charge-dialog/charge-dialog",
+        "pages/updateUserinfo/updateUserinfo",
+        "pages/searchPage/searchPage",
+        "pages/rankingList/rankingList",
+        "pages/recharge/recharge",
+        "pages/member/member",
+        "pages/transactionDetails/transactionDetails",
+        "pages/userAgreement/userAgreement",
+        "pages/setPage/setPage",
+        "pages/cardPage/cardPage"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Mini Program",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "selectedColor": "#E82525",
+        "borderStyle": "white",
+        "list": [{
+                "pagePath": "pages/welfare/welfare",
+                "text": "福利",
+                "iconPath": "./static/img/fuli.png",
+                "selectedIconPath": "./static/img/fuli_after.png"
+            },
+            {
+                "pagePath": "pages/bingeWatching/bingeWatching",
+                "text": "追剧",
+                "iconPath": "./static/img/zhuiju.png",
+                "selectedIconPath": "./static/img/zhuiju_after.png"
+            },
+            {
+                "pagePath": "pages/juchang/juchang",
+                "text": "剧场",
+                "iconPath": "./static/img/juchang.png",
+                "selectedIconPath": "./static/img/juchang_after.png"
+            },
+            {
+                "pagePath": "pages/wode/wode",
+                "text": "我的",
+                "iconPath": "./static/img/wode.png",
+                "selectedIconPath": "./static/img/wode_after.png"
+            }
+        ]
+    }
+}

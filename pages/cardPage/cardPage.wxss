@@ -1,0 +1,181 @@
+.expire_tips {
+  width: 750rpx;
+  height: 74rpx;
+  background: #FFF4DE;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.expire_text {
+  font-weight: 400;
+  font-size: 30rpx;
+  color: #E60505;
+}
+
+.expire_btn {
+  background: #E93737;
+  border-radius: 27rpx 27rpx 27rpx 27rpx;
+  width: 182rpx;
+  height: 53rpx;
+  line-height: 53rpx;
+  font-weight: 400;
+  font-size: 29rpx;
+  color: #FFFFFF;
+}
+
+.expire_close {
+  position: absolute;
+  width: 24rpx;
+  height: 24rpx;
+  font-weight: 400;
+  font-size: 37rpx;
+  color: #E60505;
+  right: 0;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.list_warp {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+.xx {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  width: 96%;
+  height: 153rpx;
+  background: #E5F6FA;
+  border-radius: 14rpx 14rpx 14rpx 14rpx;
+  margin: 20rpx 0;
+  box-sizing: border-box;
+}
+
+.xx_warp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.xx_tx {
+  width: 120rpx;
+  height: 85rpx;
+  background: radial-gradient(0% 0% at 0% 0%, #2EA1FF 0%, #6CE4FE 0%);
+  border-radius: 14rpx 14rpx 14rpx 14rpx;
+}
+
+.xx_userWarp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 8px;
+}
+
+.xx_mz {
+  font-weight: 500;
+  font-size: 31rpx;
+  color: #080000;
+}
+
+.xx_num {
+  font-weight: 500;
+  font-size: 31rpx;
+  color: #080000;
+}
+
+.xx_title {
+  font-weight: 400;
+  font-size: 25rpx;
+  color: #080000;
+}
+
+.xx_copy {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* 充值金币按钮 */
+.btns {
+  display: flex;
+  align-items: center;
+}
+
+.custom-button {
+  font-weight: 400;
+  font-size: 26rpx;
+  width: 136rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 25rpx 25rpx 25rpx 25rpx;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+
+.active {
+  background: #CECDCD;
+  color: #010001;
+}
+
+.defaut {
+  color: #FFFFFF;
+  background: radial-gradient(0% 0% at 0% 0%, #EC6666 0%, #E60505 0%), #FCFBFB;
+}
+
+.dialog_warp {
+  height: 286rpx;
+  background: radial-gradient(0% 0% at 0% 0%, #FBE9E9 0%, #F3F1F3 0%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.dialog_top {
+  font-size: 32rpx;
+  color: #080600;
+  text-align: center;
+}
+
+.dialog_center {
+  font-size: 41rpx;
+  color: #080600;
+  text-align: center;
+}
+
+.dialog_bottom {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.bottom_left {
+  width: 214rpx;
+  height: 68rpx;
+  background: #F9EBEB;
+  border-radius: 14rpx 14rpx 14rpx 14rpx;
+  font-weight: 400;
+  font-size: 35rpx;
+  color: #030000;
+  line-height: 68rpx;
+  border: 1rpx solid #ffffff;
+}
+
+.bottom_right {
+  width: 212rpx;
+  height: 68rpx;
+  background: #EA4B4B;
+  border-radius: 14rpx 14rpx 14rpx 14rpx;
+  font-weight: 400;
+  font-size: 35rpx;
+  color: #FFFFFF;
+  line-height: 68rpx;
+}
