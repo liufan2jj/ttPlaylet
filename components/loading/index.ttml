@@ -1,0 +1,4 @@
+<view class="tt-loading-wrapper">
+  <view class="tt-load-dot tt-load-red-dot"> </view>
+  <view class="tt-load-dot tt-load-blue-dot"> </view>
+</view>

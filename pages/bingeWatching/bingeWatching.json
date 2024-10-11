@@ -1,7 +1,7 @@
 {
     "usingComponents": {
-        "van-card": "/miniprogram_npm/@vant/weapp/card/index",
-        "van-button": "/miniprogram_npm/@vant/weapp/button/index"
+        "ablum-card": "../../components/ablum-card/ablum-card",
+        "binge-watch-card": "../../components/binge-watch-card/binge-watch-card"
     },
     "navigationBarTitleText": "追剧"
 }

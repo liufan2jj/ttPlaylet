@@ -1,0 +1,15 @@
+<view class="process_wrap"  style="width: {{max}}px; z-index: 1999;">
+     <view tt:if="{{VideoTimeVisible}}" class="video-time" style="left: {{(max-131)/2}}px;">
+          {{videoCurrentTime}}&nbsp;/&nbsp;{{comVideoTotalTime}}</view>
+     <view class="{{highlight?'highlight-line':'line'}}" animation="{{lineAnimationData}}" bindtap=""></view>
+     <view id="active-line" class="{{highlight?'highlight-active-line':'active-line'}}" bindtap=""
+          animation="{{activeLineAnimationData}}" style="width:{{progress}}px; max-width: {{max}}px;"></view>
+     <view id="slider" class="{{highlight?'highlight-spot':'spot'}}" style="left:{{progress>max?max:progress}}px"
+          animation="{{spotAnimationData}}" catchtouchend="touchend" catchtouchmove="moveTo"
+          catchtouchstart="buttonStart"> 
+               <view></view>
+     </view> 
+</view>
+<view bindtap="progressHandler" class="video-pause">
+     <image  tt:if="{{videoPause}}"  src="../../assets/pause.png"/>
+ </view>

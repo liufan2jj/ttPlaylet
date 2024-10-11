@@ -1,0 +1,8 @@
+<!-- 消费记录卡片组件 -->
+<view class="record-item" tt:for="{{recordList}}" tt:key="index">
+    <view class="record-time">{{item.time}}</view>
+    <view class="record-info">
+        <view class="info-name">{{item.ablum_name}}</view>
+        <view class="info-price">{{item.ablum_price}}</view>
+    </view>
+</view>

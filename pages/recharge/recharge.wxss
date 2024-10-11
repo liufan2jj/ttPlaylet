@@ -94,6 +94,14 @@ page {
 }
 
 /* 充值列表 */
+.charge_item_warp {
+  width: 704rpx;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 36rpx;
+  margin: 36rpx 0;
+}
+
 .charge_item {
   text-align: center;
   position: relative;

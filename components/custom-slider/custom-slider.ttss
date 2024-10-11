@@ -1,0 +1,100 @@
+.process_wrap {
+    position: relative;
+    width: 680rpx;
+    margin: 0 auto;
+}
+
+.line {
+    width: 100%;
+    height: 4rpx;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4rpx;
+}
+
+.active-line {
+    position: absolute;
+    height: 4rpx;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4rpx;
+}
+
+.spot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8rpx;
+    height: 8rpx;
+    border-radius: 8rpx;
+    /* background: rgba(255, 255, 255, 0.04); */
+    background-color: black;
+    box-shadow: 0 0 8rpx 0 rgba(0, 0, 0, 0.34);
+}
+
+.highlight-line {
+    width: 100%;
+    height: 8rpx;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4rpx;
+}
+
+.highlight-active-line {
+    position: absolute;
+    height: 8rpx;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--text-text-quaternary-3, #FFF);
+    border-radius: 4rpx;
+}
+
+.highlight-spot {
+    position: absolute;
+    top: -3rpx;
+    left: 0;
+    width: 12rpx;
+    height: 12rpx;
+    border-radius: 100%;
+    background: var(--text-text-quaternary-3, #FFF);
+    box-shadow: 0 0 8rpx 0 rgba(0, 0, 0, 0.34);
+}
+
+.video-time {
+    position: absolute;
+    top: -96rpx;
+    color: var(--text-const-const-text-inverse, var(--text-text-quaternary-3, #FFF));
+    text-align: center;
+    text-shadow: 0px 2.4000000953674316px 1.2000000476837158px rgba(0, 0, 0, 0.15);
+    font-family: PingFang SC;
+    font-size: 40rpx;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+}
+.video-pause{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+}
+.video-pause image{
+    width: 108rpx;
+    height: 134rpx;
+}
+#slider ::before{
+    content: "";
+    position: absolute;
+    top: -40rpx;
+    right: -20rpx;
+    bottom: -20rpx;
+    left: -20rpx;
+}

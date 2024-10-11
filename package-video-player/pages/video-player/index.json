@@ -1,0 +1,14 @@
+{
+    "usingComponents": {
+        "video-player":"ext://industry/video-player",
+        "collapseText":"../../../components/collapse-text/collapse-text",
+        "customSlider":"../../../components/custom-slider/custom-slider",
+        "changeVideoDialog":"../../../components/change-video-dialog/change-video-dialog",
+        "fullScreenTool":"../../../components/full-screen-tool/full-screen-tool",
+        "loading":"../../../components/loading/index",
+        "errPage":"../../../components/error-page/error-page"
+    },
+    "transparentTitle": "always",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText":"播放页面"
+}

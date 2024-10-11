@@ -42,8 +42,8 @@
             <view class="van-cell-text">
                 {{item.name}}
             </view>
-            <button class="content-btn" tt:if="{{item.name=='联系客服'}}" open-type="contact" bindcontact="handleContact"
-                session-from="sessionFrom">{{item.name}}</button>
+            <button class="content-btn" tt:if="{{item.name=='联系客服'}}" open-type="im" data-im-id="{{ imId }}"
+                bindim="imCallback" binderror="onimError">{{item.name}}</button>
         </view>
     </van-cell>
 </view>

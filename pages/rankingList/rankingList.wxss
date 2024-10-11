@@ -1,55 +1,14 @@
-page {
-  padding-left: 10px;
-  padding-right: 10px;
+.box-down {
+  margin: 0 24rpx;
 }
 
-.jing-xuan_item {
-  width: 100%;
-  position: relative;
+.box-down view {
+  margin-top: 32rpx;
 }
 
-.jing-xuan_tips {
-  position: absolute;
-  left: 0;
-  top: -4px;
-  background-image: linear-gradient(212deg, #cccccc 50%, rgba(255, 255, 255, 0) 50%), linear-gradient(148deg, #cccccc 50%, rgba(255, 255, 255, 0) 50%);
-  width: 28px;
-  height: 61px;
-  text-align: center;
-}
-
-.jing-xuan-img {
-  width: 218rpx;
-  height: 274rpx;
-  background: #EBFDFB;
-  border-radius: 21rpx 21rpx 21rpx 21rpx;
-}
-
-
-.jing-xuan-desc {
-  width: 100%;
-  font-weight: 400;
-  text-align: left;
-  font-style: normal;
-  text-transform: none;
-}
-
-.jing-xuan-desc .desc {
-  font-size: 20rpx;
-  color: #000307;
-  line-height: 35rpx;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.jing-xuan-desc .num {
-  font-size: 22rpx;
-  color: #E60A0A;
-  line-height: 31rpx;
-}
-
-.loading_tips {
-  font-size: 12px;
-  text-align: center;
+.ablum-video-player {
+  width: 704rpx;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16rpx;
 }

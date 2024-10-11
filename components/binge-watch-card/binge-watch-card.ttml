@@ -1,0 +1,21 @@
+<!-- 追剧页 追剧中组件 -->
+<block tt:for="{{chasingList}}">
+    <view class="ablum-item" bindtap="goPlay" data-item="{{item}}">
+        <!-- 剧集更新角标 -->
+        <view tt:if="{{item.ablum_update_status}}" class="is-update" style="z-index: 1;">
+            <text>更新</text>
+        </view>
+        <image tt:if="{{item.ablum_update_status}}" mode="widthFix" class="is-update" src="../../assets/updateIcon.png">
+        </image>
+        <!-- 剧集图片 -->
+        <view class="ablum-photo">
+            <image mode="aspectFill" src="{{item.ablum_banner}}"></image>
+        </view>
+        <!-- 剧集信息 -->
+        <view class="ablum-info">
+                <view class="ablum-title">{{item.ablum_name}}</view>
+                <view class="ablum-desc">{{item.ablum_description}}</view>
+                <view class="ablum-update">更新至 第{{item.ablum_current_update_episodes}}集</view>
+        </view>
+    </view>
+</block>

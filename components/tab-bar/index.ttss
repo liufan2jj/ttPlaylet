@@ -1,0 +1,86 @@
+.tabbar {
+    width: 686rpx;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    text-align: center;
+    overflow: auto;
+}
+.container-small{
+    width: 100vw;
+    height: 65rpx;
+    border-bottom: 1rpx solid rgba(22, 24, 35, 0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+}
+/* 左滑 */
+.tabbar-translate-left{
+    /* position: relative; 或其他定位属性 */
+    /* transform-origin: 0 0; 设置新的定位基准 */
+    transform: translateX(-514rpx);
+    transition: all 0.5s linear;
+    /* position: absolute;
+    left: 514rpx; */
+}
+/* 右滑 */
+.tabbar-translate-right{
+    position: relative; /* 或其他定位属性 */
+    transform-origin: 0 0; /* 设置新的定位基准 */
+    transform: translateX(0rpx);
+    /* position: absolute;
+    right: 514rpx; */
+}
+.tabbar-small{
+    width: 686rpx;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tabbar-item{
+    width: auto;
+    min-width: 68rpx;
+    font-family: 'PingFang SC';
+    font-weight: 400;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.50);
+    margin-right: 48rpx;
+    white-space: nowrap;
+}
+
+.active {
+    font-weight: 500;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.90);
+    padding-bottom: 20rpx;
+    border-bottom: 4rpx solid #CCB07A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+/* .container{
+    width: 100%;
+    height: 58rpx;
+    background: #FFFFFF;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+} */
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+    display: none;
+  }

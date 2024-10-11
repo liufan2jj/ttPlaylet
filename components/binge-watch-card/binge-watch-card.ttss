@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.ablum-item {
+    background: #FFFFFF;
+    width: 702rpx;
+    height: 268rpx;
+    display: flex;
+    border-radius: 20rpx;
+    align-items: center;
+    margin: 32rpx 24rpx 0 0rpx;
+    position: relative;
+}
+
+.ablum-item>view {
+    margin-left: 20rpx;
+}
+
+.ablum-photo {
+    width: 164rpx;
+    height: 220rpx;
+}
+
+.ablum-photo image {
+    width: 100%;
+    height: 100%;
+    border-radius: 8rpx;
+    vertical-align: middle;
+}
+
+.ablum-info{
+    width: 470rpx;
+    height: 220rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* .ablum-info view:nth-child(2) view{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+} */
+
+.is-update {
+    height: 36rpx;
+    width: 72rpx;
+    font-size: 24rpx;
+    position: absolute;
+    top: 0;
+    right: 0; 
+    color: #fff;
+    font-weight: 500;
+}
+
+.is-update text{
+    margin: 6rpx 12rpx 6rpx 12rpx;
+}
+
+.ablum-title{
+    font-size: 30rpx;
+    font-weight: 500;
+}
+
+.ablum-desc{
+    width: 470rpx;
+    height: 102rpx;
+    font-size: 24rpx;
+    color: rgba(22, 24, 35, 0.6);
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.ablum-update{
+    font-size: 24rpx;
+    font-weight: 500;
+}

@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+        "customSlider":"../../../components/custom-slider/custom-slider",
+        "collapseText":"../../../components/collapse-text/collapse-text",
+        "fullScreenTool":"../../../components/full-screen-tool/full-screen-tool",
+        "loading":"../../../components/loading/index",
+        "errPage":"../../../components/error-page/error-page"
+    },
+    "transparentTitle": "always",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText":"播放页面"
+}

@@ -1,0 +1,205 @@
+<swiper
+    vertical="{{!isFullScreen}}"
+    duration="{{swiperOptions.duration}}"
+    circular="{{swiperOptions.circular}}"
+    touchRatio="{{1}}"
+    current="{{swiperOptions.current}}"
+    style="height:100vh;z-index: 1999;"
+    class="{{isFullScreen?"full-screen-swiper":""}}"
+    bindchange="swiperChange"
+>
+    <block tt:for="{{curQueue}}">
+        <swiper-item>
+            <view
+                class="main"
+                style="height:100%;z-index: 1;"
+                bindtap="onTapVideo"
+            >
+                <!-- 首尾，继续滑动，显示空屏 -->
+                <block tt:if="{{!item}}">
+                    <view
+                        style="width:100vw; height:100vh;z-index:1; background-color: black;"
+                    />
+                </block>
+                <!-- 加载中 -->
+                <block tt:elif="{{item.status === 'loading'}}">
+                    <view class="loading">
+                        <loading />
+                    </view>
+                </block>
+                <!-- 获取 video 失败 -->
+                <block tt:elif="{{item.status === 'error'}}">
+                    <errPage
+                        needRetryBtn="{{false}}"
+                        errTitle="网络错误"
+                        errDesc="请检查网络连接后重试"
+                        errImage="../../assets/network-err.png"
+                    />
+                </block>
+                <!-- 渲染 video-player 组件 -->
+                <block tt:elif="{{item.eid}}">
+                    <video-player
+                        bindtimeupdate="timeUpdateHandler"
+                        bindgetsource="getsourceHandler"
+                        enable-dark-water-mark="{{true}}"
+                        cloud-type="{{1}}"
+                        version="1"
+                        album-id="{{item.aid}}"
+                        episode-id="{{item.eid}}"
+                        id="{{item.id}}"
+                        autoplay="{{isFullScreen}}"
+                        style="width:100vw; height:100vh;z-index: 1;"
+                        object-fit="contain"
+                        show-fullscreen-btn="{{false}}"
+                        show-play-btn="{{false}}"
+                        vslide-gesture-in-fullscreen="{{false}}"
+                        controls="{{false}}"
+                        bindended="nextVideo"
+                        binderror="error"
+                        poster="{{item.episodes_cover}}"
+                        data-episode="{{item.episode}}"
+                    >
+                        <!-- 错误兜底页面 网络错误-->
+                        <errPage
+                            tt:if="{{playInfo[item.episode].error}}"
+                            needRetryBtn="{{false}}"
+                            errTitle="抱歉，剧集不见了"
+                            errDesc="因剧集权限或已被删除，无法观看，去看看其他作品吧"
+                            errImage="../../assets/error-page.png"
+                            needErrTips="{{true}}"
+                        />
+                        <!-- 全屏视频工具控件 -->
+                        <view
+                            tt:if="{{isFullScreen}}"
+                        >
+                            <fullScreenTool
+                                tt:ref="fullScreenToolHandler"
+                                toolAppear="{{showFullScreenTool}}"
+                                likes="{{item.episodesLikes}}"
+                                collects="{{item.episodesChasing}}"
+                                shares="{{item.episodesShares}}"
+                                videoDetail="{{item}}"
+                                fullVideoCurrentTimeSec="{{playInfo[item.episode].videoCurrentTime}}"
+                                bind:fullScreenSlideStart="fullScreenSlideStart"
+                                bind:fullScreenSlideEnd="fullScreenSlideEnd"
+                                bind:exitFullscreen="exitFullscreen"
+                                bind:fullScreenVideoPause="fullScreenVideoPause"
+                                videoTotalTime="{{playInfo[item.episode].videoDuration}}"
+                            />
+                        </view>
+                        <!-- 选集弹窗 -->
+                        <changeVideoDialog
+                            tt:if="{{currentAblum}}"
+                            bind:episodesChangeHandler="onChangeEpisode"
+                            currentVideo="{{item}}"
+                            currentAblum="{{currentAblum}}"
+                            bind:cancel="cancelChangeVideo"
+                            needChangeVideo="{{showChangeVideoPopup}}"
+                            tt:ref="changeVideoDialogHandler"
+                        />
+                        <view
+                            class="custom-slider {{isFullScreen?'hidden':''}}">
+                            <customSlider
+                                id="{{'customSlider' + item.id}}"
+                                tt:ref="customSliderHandler"
+                                bind:slideStart="slideStart"
+                                bind:slideEnd="slideEnd"
+                                bind:progressHandler="videoPauseOrPlay"
+                                videoCurrentTimeSec="{{playInfo[item.episode].videoCurrentTime}}"
+                                videoTotalTime="{{playInfo[item.episode].videoDuration}}"
+                                max="{{windowWidth-10}}"
+                            />
+                        </view>
+                    </video-player>
+
+                    <view class="info-con">
+                        <!-- 全屏按钮 -->
+                        <view
+                            tt:if="{{item.horizontal_screen}}"
+                            class="full-screen-btn {{showChangeVideoPopup?'hidden':''}}"
+                            bindtap="changeFullScreen"
+                            data-fullscreeneid="{{item.eid}}"
+                            data-fullscreencurrentvideo="{{item}}"
+                        >
+                            <image src="../../../assets/full-screen.png" />
+                            全屏观看
+                        </view>
+                        <!-- 底部剧名称 -->
+                        <view class="video-title">
+                            {{currentAblum.ablum_name}}
+                        </view>
+                         <!-- 底部剧简介 -->
+                        <view class="video-text">
+                            <collapseText
+                                text="{{item.episodes_description}}"
+                                fontSize="30rpx"
+                                fontColor="rgba(255, 255, 255, 0.9)"
+                            />
+                        </view>
+                    </view>
+
+                    <!-- 操作区域 -->
+                    <view class="operate">
+                        <!-- 点赞 -->
+                        <view
+                            bindtap="likeHandler"
+                            data-videoItem="{{item}}"
+                        >
+                            <image
+                                src="{{item.likeActive? "../../../assets/Like_Shadow.png": "../../../assets/like.png"}}"
+                            ></image>
+                            <view class="oprarte-num">
+                                {{item.episodesLikes}}</view>
+                        </view>
+
+                        <!-- 收藏 -->
+                        <view
+                            bindtap="starHandler"
+                            data-videoItem="{{item}}"
+                        >
+                            <image
+                                src="{{item.starActive? "../../../assets/Star_Shadow.png": "../../../assets/star.png"}}"
+                            ></image>
+                            <view class="oprarte-num">
+                                {{item.episodesChasing}}</view>
+                        </view>
+
+                        <!-- 分享 -->
+                        <view style="position: relative;">
+                            <image src="../../../assets/share.png">
+                            </image>
+                            <button
+                                style="opacity: 0; position: absolute; top: 0; left: 0;width: 72rpx; height: 72rpx;"
+                                catchtap="shareVideo"
+                                open-type="share"
+                                data-videoItem="{{item}}"
+                            />
+                            <view class="oprarte-num">
+                                {{item.episodesShares}}</view>
+                        </view>
+                    </view>
+                    <!-- 选集区域 -->
+                    <view
+                        tt:if="{{item.aid}}"
+                        bindtap="changeVideo"
+                        class="{{isFullScreen?'hidden':''}} {{isSlideStart?'hidden':''}} {{videoError?'hidden':''}} change-video"
+                    >
+                        <view class="change-video-con">
+                            <view class="change-video-icon">
+                                <image src="../../../assets/changevideo.png">
+                                </image>
+                                <view style="margin-left: 10px;" class="change-video-title">
+                                    {{currentAblum.ablum_name}}·{{currentAblum.ablum_episodes}}集全
+                                </view>
+                            </view>
+                            <view class="arrow">
+                                <image src="../../../assets/arrow-right.png">
+                                </image>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </swiper-item>
+    </block>
+</swiper>

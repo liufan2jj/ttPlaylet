@@ -1,0 +1,85 @@
+.process_wrap {
+    width: 680rpx;
+    margin: 0 auto;
+}
+
+.line {
+    width: 100%;
+    height: 4rpx;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.20);
+    border-radius: 4rpx;
+}
+
+.active-line {
+    position: absolute;
+    height: 4rpx;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.90);
+    border-radius: 4rpx;
+}
+
+.spot {
+    position: absolute;
+    top: -10rpx;
+    left: 0;
+    width: 24rpx;
+    height: 24rpx;
+    border-radius: 24rpx;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 24rpx 0 rgba(0, 0, 0, 0.34);
+}
+.spot ::before{
+    content: "";
+    position: absolute;
+    top: -20rpx;
+    right: -20rpx;
+    bottom: -20rpx;
+    left: -20rpx;
+}
+
+.highlight-line {
+    width: 100%;
+    height: 8rpx;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 4rpx;
+}
+
+.highlight-active-line {
+    position: absolute;
+    height: 8rpx;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--text-text-quaternary-3, #FFF);
+    border-radius: 4rpx;
+}
+
+.video-time {
+    position: absolute;
+    top: -96rpx;
+    color: var(--text-const-const-text-inverse, var(--text-text-quaternary-3, #FFF));
+    text-align: center;
+    text-shadow: 0px 2.4000000953674316px 1.2000000476837158px rgba(0, 0, 0, 0.15);
+    font-family: PingFang SC;
+    font-size: 40rpx;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+}
+.video-tim-fullscreen{
+    position: absolute;
+    top: 70rpx;
+    left: 76rpx;
+    color: var(--text-icon-dark-const-text-inverse, var(--text-text-quaternary-3, #FFF));
+    text-shadow: 0 2rpx 2rpx rgba(0, 0, 0, 0.30);
+    /* CN/P1-Medium 14pt */
+    font-family: PingFang SC;
+    font-size: 28rpx;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

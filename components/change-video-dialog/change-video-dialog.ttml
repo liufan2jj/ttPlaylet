@@ -1,0 +1,47 @@
+
+<view class="{{isFullScreen?'full-screen-dialog':'animation-dialog'}}" tt:if="{{needChangeVideo}}" animation="{{animationData}}">
+    <!-- <view tt:if="{{needChangeVideo}}" class="mask" bindtap="maskHandler"></view> -->
+    <view  tt:if="{{needLoading}}" class="loading">
+        <loading />
+    </view>
+    <view class="navbar-container">
+        <view style="display: flex;">
+            <view class="skit-cover">
+                <image src="{{currentAblum.ablum_banner}}" />
+            </view>
+            <view class="skit-detail">
+                <view class="skit-title">{{currentAblum.ablum_name}}</view>
+                <view class="skit-desc">{{currentAblum.ablum_episodes}}集全</view>
+            </view>
+        </view>
+        <view class="back-icon iconfont-trade icon-close" style="z-index: 1999;" bindtap="cancel">
+            <icon class="tt-icon" color="#FFF" type="cancel"></icon>
+        </view>
+    </view>
+    <!-- 剧集区间选择区域 -->
+    <!-- <scroll-view scroll-x="{{true}}" class="episode-interval" ></scroll-view> -->
+    <view class="episode-interval">
+        <tabBar  options="{{sortList}}" current="{{current}}" bind:change="handleTabbarChange" />
+    </view>
+    <swiper current="{{current}}" style="height:852rpx;" bindchange="switchTap">
+
+            <block tt:for="{{sortList}}">
+                <swiper-item>
+        <scroll-view id="card" scroll-y="{{true}}" style="height: 852rpx;">
+                    <view class="episode-card-con">
+                    <view class="episode-card" bindtap="onTapEpisodes" data-episodeItem="{{item}}" tt:for="{{currentAblum.episodes}}">
+                        <image class="img-cover" src="{{currentAblum.ablum_banner}}" />
+                        <view tt:if="{{(item.episodes_id==currentVideo.episodes_id) || item.episodes_locking}}" class="episode-card-mask">
+                            <view tt:if="{{item.episodes_id==currentVideo.episodes_id}}" class="watching">正在观看</view>
+                            <image class="lock" tt:if="{{item.episodes_locking}}" src="../../assets/lock.png" />
+                        </view>
+                        <view class="episode-card-title">第{{item.episodes_num}}集</view>
+                    </view>
+                </view>
+            </scroll-view>
+                </swiper-item>
+            </block>
+
+    </swiper>
+    
+</view>

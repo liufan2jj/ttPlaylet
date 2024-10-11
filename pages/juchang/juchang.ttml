@@ -1,45 +1,34 @@
-<van-skeleton title avatar row="8" loading="{{ loading }}">
-    <!-- 搜索栏 -->
-    <view capture-bind:touchstart="goSearchPage">
-        <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+<!-- 搜索栏 -->
+<view capture-bind:touchstart="goSearchPage">
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" />
+</view>
+<!-- banner图 -->
+<banner videoList="{{videoPlayerList}}" />
+<view class="box-down">
+    <!-- 排行，签到，vip -->
+    <view class="rank-sign-vip">
+        <view tt:for="{{iconList}}" tt:key="index" data-type="{{item.text}}" bind:tap="goClassification">
+            <view class="custom-icon-warp">
+                <image class="custom-icon" src="{{item.icon}}" />
+                <text class="custom-title">{{item.text}}</text>
+            </view>
+        </view>
     </view>
-    <!-- 轮播图 -->
-    <view class="swiper_warp">
-        <swiper interval="5000" indicator-dots="true" autoplay="true" circular="true">
-            <swiper-item tt:for="{{imgList}}" tt:key="index">
-                <image mode="scaleToFill" src="{{item.banner_img}}" bindtap="goPlayVideo"></image>
-            </swiper-item>
-        </swiper>
-    </view>
-    <!-- 排行，签到，Vip -->
-    <van-grid column-num="3" border="{{ false }}">
-        <van-grid-item use-slot tt:for="{{iconList}}" tt:key="index" data-type="{{item.text}}"
-            bind:click="goClassification">
-            <image class="custom-icon" src="{{item.icon}}" />
-            <text class="custom-title">{{item.text}}</text>
-        </van-grid-item>
-    </van-grid>
     <!-- 精选好剧 -->
     <view>
-        <van-cell border="{{false}}" is-link value="查看更多">
+        <van-cell border="{{false}}">
             <view class="jing-xuan-title" slot="title">
                 <view class="van-cell-text">
-                    <image class="van-cell-img" src="../../static/img/tuijian.png" />精选好剧
+                    <image class="van-cell-img" src="../../static/img/tuijian.png" />
+                    精选好剧
                 </view>
             </view>
         </van-cell>
-        <van-grid column-num="3" border="{{ false }}">
-            <van-grid-item use-slot tt:for="{{jingXuanList}}" tt:key="index">
-                <image class="jing-xuan-img" src="{{item.cover_url}}" bindtap="goPlayVideo"></image>
-                <view class="jing-xuan-desc">
-                    <view class="desc">{{item.name}}</view>
-                    <view class="num">
-                        {{item.views_count||'末日·77集'}}
-                    </view>
-                </view>
-            </van-grid-item>
-        </van-grid>
-        <view tt:if="{{loadingMore&&jingXuanList.length>=10}}" class="loading_tips">滑动加载更多...</view>
-        <view tt:if="{{noneMore&&jingXuanList.length>=10}}" class="loading_tips">暂无更多数据...</view>
+        <view class="ablum-video-player">
+            <block tt:for="{{videoPlayerList}}">
+                <ablum-card ablumItem="{{item}}" bindtap="goVideoPlayer" data-id="{{item.ablum_id}}"
+                    data-episodesId="{{item.episodes[0].episodes_id}}" />
+            </block>
+        </view>
     </view>
-</van-skeleton>
+</view>

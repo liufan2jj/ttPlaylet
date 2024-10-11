@@ -1,0 +1,69 @@
+<swiper vertical="{{true}}" duration="{{500}}" circular="{{false}}" touchRatio="{{1}}" current="{{currSwiperIdx}}"
+    style="height:100vh;z-index: 1999;" class="{{isFullScreen?" full-screen-swiper":""}}" bindchange="swiperChange">
+    <block tt:for="{{imgArr}}">
+        <swiper-item bindtouchmove="move" class="{{isFullScreen?" full-screen-swiper":""}}"
+            catchtouchmove="{{needChangeVideo}}" bindtouchstart="start" bindtouchend="end">
+            <view class="main" style="height:100%;z-index: 1;" bindtap="onTapVideo">
+                <block tt:if="{{index !== currIdx && index !== currIdx + 1 && index !== currIdx - 1}}">
+                    <!-- <block tt:if="{{false}}"> -->
+                    <image style="width:100vw; height:100vh;z-index:1;" src="../../../assets/ablum01.png" mode="" />
+                </block>
+                <block tt:if="{{index === currIdx  || index === currIdx + 1 || index === currIdx - 1}}">
+                    <video bindtimeupdate="timeUpdateHandler" enable-dark-water-mark="{{true}}"
+                        src="{{urlArray[index]}}" id="{{index}}" encrypted-token="4a5f3c8e9d2b1f0c7e6a7d5f4b9c2e0a"
+                        style="width:100vw; height:100vh;z-index: 1;" object-fit="contain"
+                        show-fullscreen-btn="{{false}}" bindloadedmetadata="loadedmetadataHandler"
+                        bindseekcomplete="videoSeekHandler" show-play-btn="{{false}}"
+                        vslide-gesture-in-fullscreen="{{false}}" controls="{{false}}" autoplay="{{false}}"
+                        bindplay="playerPlay" binderror="error">
+                        <!-- 视频加载时需要loading -->
+                        <view tt:if="{{false}}" class="loading">
+                            <loading />
+                        </view>
+                        <!-- 错误兜底页面 网络错误-->
+                        <errPage tt:if="{{netWorkErr}}" needRetryBtn="{{true}}" errTitle="网络错误" errDesc="请检查网络连接后重试"
+                            bind:errPageRetry="netWorkErrRetry" errImage="../../assets/network-err.png" />
+                        <!-- 错误兜底页面 网络错误-->
+                        <errPage tt:if="{{videoError}}" needRetryBtn="{{false}}" errTitle="抱歉，剧集不见了"
+                            errDesc="因剧集权限或已被删除，无法观看，去看看其他作品吧" errImage="../../assets/error-page.png"
+                            needErrTips="{{true}}" />
+                        <!-- 全屏视频控件 -->
+                        <view tt:if="{{isFullScreen}}">
+
+                            <fullScreenTool comVideo="{{true}}" videoDetail="{{ablumData[index]}}"
+                                fullScreenIsVideoPlay="{{fullScreenIsVideoPlay}}"
+                                fullVideoCurrentTimeSec="{{videoCurrentTime}}"
+                                bind:fullScreenChangeVideo="fullScreenChangeVideo"
+                                bind:fullScreenSlideStart="fullScreenSlideStart"
+                                bind:fullScreenSlideEnd="fullScreenSlideEnd" bind:exitFullscreen="exitFullscreen"
+                                bind:fullScreenVideoPause="fullScreenVideoPause" tt:ref="fullScreenToolHandler"
+                                toolAppear="{{toolAppear}}" videoTotalTime="{{videoDuration}}" />
+                        </view>
+                        <!-- 自定义进度条区域  tt:if="{{windowWidth&&videoDuration}}" -->
+                        <view class="custom-slider {{isFullScreen?'hidden':''}}" >
+                            <customSlider tt:ref="customSliderHandler" bind:slideStart="slideStart"
+                                bind:slideEnd="slideEnd" bind:progressHandler="videoPlay"
+                                isExitFullscreen="{{isExitFullscreen}}" videoCurrentTimeSec="{{videoCurrentTime}}"
+                                videoTotalTime="{{videoDuration}}" max="{{windowWidth}}" />
+                        </view>
+                    </video>
+                    <!-- 视频详情 -->
+                        <view class="info-con">
+                            <view tt:if="{{currentAblum["episodes"][index].horizontal_screen}}" class="full-screen-btn"
+                                bindtap="changeFullScreen">
+                                <image src="../../../assets/full-screen.png" />
+                                全屏观看
+                            </view>
+                            <view class="video-title">
+                                {{currentAblum.ablum_name}}
+                            </view>
+                            <view class="video-text">
+                                <collapseText text="{{currentAblum["episodes"][index].episodes_title+' '+currentAblum["episodes"][index].episodes_description}}"
+                                    fontSize="30rpx" fontColor="rgba(255, 255, 255, 0.9)" />
+                            </view>
+                        </view>
+                </block>
+            </view>
+        </swiper-item>
+    </block>
+</swiper>

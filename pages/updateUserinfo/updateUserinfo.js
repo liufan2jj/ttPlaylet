@@ -9,33 +9,41 @@ Page({
   data: {
     avatarUrl: "",
     name: "",
-    userInfo: {}
+    userInfo: null
   },
-  /**
-   * 用户信息获取权限
-   */
-  onChooseAvatar(e) {
-    const {
-      avatarUrl
-    } = e.detail
+  onChange(e) {
     this.setData({
-      avatarUrl,
-    })
+      name: e.detail,
+    });
   },
-  getUserProfile: function () {
+  getUserProfile() {
     tt.getUserProfile({
-      desc: '信息仅作为个人展示',
       success: (res) => {
-        console.log(res)
+        this.setData({
+          userInfo: res.userInfo,
+        });
+        const {
+          avatarUrl,
+          nickName
+        } = res.userInfo
+        this.setData({
+          avatarUrl,
+          name: nickName
+        })
       },
-      fail: (res) => {
-        console.log('用户拒绝', res)
-      }
-    })
+      fail(err) {
+        console.log('tt.getUserProfile failed', err.errMsg);
+        tt.showModal({
+          title: '获取用户信息失败',
+          content: err.errMsg,
+          showCancel: false,
+        });
+      },
+      complete() {},
+    });
   },
   submitUserInfo: async function () {
-    this.data.userInfo.nickname = this.data.name
-    this.data.userInfo.avatar_url = this.data.avatarUrl
+    this.data.userInfo.nickName = this.data.name
     const {
       code,
       msg,
@@ -48,8 +56,7 @@ Page({
       })
       tt.setStorageSync('userInfo', data);
       this.setData({
-        avatarUrl: data.avatar_url || '',
-        name: data.nickname || '',
+        userInfo: this.data.userInfo
       })
     } else {
       tt.showToast({
@@ -68,12 +75,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.data.userInfo = tt.getStorageSync('userInfo') || {}
+    this.data.userInfo = tt.getStorageSync('userInfo')
     if (this.data.userInfo) {
-      console.log(this.data.userInfo)
       this.setData({
-        avatarUrl: this.data.userInfo.avatar_url,
-        name: this.data.userInfo.nickname,
         userInfo: this.data.userInfo
       })
     }

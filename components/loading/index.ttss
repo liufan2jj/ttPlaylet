@@ -1,0 +1,74 @@
+.tt-load-dot {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.tt-load-red-dot {
+  background: #fe2c55;
+  -webkit-animation: redDotLoop 1s steps(20, end) infinite;
+  animation: redDotLoop 1s steps(20, end) infinite;
+}
+
+.tt-load-blue-dot {
+  background: #3af2ff;
+  -webkit-animation: blueDotLoop 1s steps(20, end) infinite;
+  animation: blueDotLoop 1s steps(20, end) infinite;
+}
+
+@keyframes redDotLoop {
+  0% {
+    z-index: 101;
+    transform: scale(1);
+    left: calc(50% - 12rpx);
+  }
+  25% {
+    z-index: 101;
+    transform: scale(1.25);
+    left: 50%;
+  }
+  50% {
+    z-index: 101;
+    transform: scale(1);
+    left: calc(50% + 12rpx);
+  }
+  75% {
+    z-index: 100;
+    transform: scale(0.75);
+    left: 50%;
+  }
+  100% {
+    z-index: 101;
+    transform: scale(1);
+    left: calc(50% - 12rpx);
+  }
+}
+
+@keyframes blueDotLoop {
+  0% {
+    z-index: 100;
+    transform: scale(1);
+    left: calc(50% + 12rpx);
+  }
+  25% {
+    z-index: 100;
+    transform: scale(0.75);
+    left: 50%;
+  }
+  50% {
+    z-index: 100;
+    transform: scale(1);
+    left: calc(50% - 12rpx);
+  }
+  75% {
+    z-index: 101;
+    transform: scale(1.25);
+    left: 50%;
+  }
+  100% {
+    z-index: 100;
+    transform: scale(1);
+    left: calc(50% + 12rpx);
+  }
+}

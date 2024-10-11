@@ -1,0 +1,17 @@
+<!-- 广场页 剧集组件 -->
+    <view class="ablum-item">
+        <!-- 剧集图片 -->
+        <view class="ablum-photo" tt:if="{{ablumItem.ablum_image ==''}}">
+            <view class="photo-err">
+                <image src="../../assets/ablum-img-err.png"></image>
+            </view>
+            <view>加载失败</view>
+        </view>
+        <view class="ablum-photo" tt:else>
+            <image mode="aspectFill" src='{{ablumItem.ablum_image}}'></image>
+        </view>
+        <!-- 剧集信息 -->
+        <view class="ablum-name">{{ablumItem.ablum_name}}</view>
+        <view class="ablum-episodes" tt:if="{{ablumItem.ablum_current_update_episodes < ablumItem.ablum_episodes}}">更新至{{ablumItem.ablum_current_update_episodes}}集</view>
+        <view class="ablum-episodes" tt:if="{{ablumItem.ablum_current_update_episodes == ablumItem.ablum_episodes}}">全{{ablumItem.ablum_episodes}}集</view>
+    </view>

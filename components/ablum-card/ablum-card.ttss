@@ -1,0 +1,49 @@
+.ablum-item{
+    /* width: 224rpx; */
+    height: 380rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 8rpx;
+}
+
+.ablum-photo{
+    width: 224rpx;
+    height: 300rpx;
+    font-size: 26rpx;
+    color: rgba(22, 24, 35, 0.34);
+    text-align: center;
+    background-color: rgba(246, 246, 246, 1);
+    border-radius: 8rpx;
+}
+
+.ablum-photo image{
+    width: 100%;
+    height: 100%;
+    border-radius: 8rpx;
+    vertical-align: middle;
+}
+
+.photo-err{
+    width: 72rpx;
+    height: 72rpx;
+    margin: 88rpx 72rpx 16rpx 72rpx;
+}
+
+.photo-err image{
+    width: 100%;
+    height: 100%;
+}
+
+.ablum-name{
+    width: 224rpx;
+    font-size: 26rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ablum-episodes{
+    font-size: 26rpx;
+    color: rgba(22, 24, 35, 0.45);
+}

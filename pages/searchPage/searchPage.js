@@ -1,4 +1,7 @@
 import {
+  getVideoList
+} from "../../api/common"
+import {
   searchDramaList
 } from '../../api/index.js'
 Page({
@@ -8,9 +11,17 @@ Page({
    */
   data: {
     value: '',
-    list: [],
+    videoPlayerList: [],
     pageNo: 1,
     pageSize: 10,
+  },
+  async onLoad() {
+    const {
+      videoPlayerList
+    } = await getVideoList();
+    this.setData({
+      videoPlayerList
+    })
   },
   onChange(e) {
     this.setData({
@@ -74,25 +85,21 @@ Page({
       })
     }
   },
-  // 点击跳转播放器
-  goPlayVideo() {
-    tt.showToast({
-      title: '跳转播放器',
+  //跳转至 video-player
+  goVideoPlayer(e) {
+    const ablumId = e.currentTarget.dataset?.id
+    const episodesId = e.currentTarget.dataset?.episodesid
+    console.log("广场页videoPlayer-aid&eid:", ablumId, episodesId);
+    tt.navigateTo({
+      url: `/package-video-player/pages/video-player/index?ablum_id=${ablumId}&episodes_id=${episodesId}`,
       success: (res) => {
-        
+
       },
       fail: (res) => {
-        
+
       },
     });
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
-  },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

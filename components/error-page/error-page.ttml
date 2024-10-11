@@ -1,0 +1,9 @@
+<view class="error-page">
+<view class="center-con">
+    <image src="{{errImage}}"/>
+    <view class="error-title">{{errTitle}}</view>
+    <view class="error-desc">{{errDesc}}</view>
+    <view class="retry-btn" tt:if="{{needRetryBtn}}" bindtap="retry">重试</view>
+</view>
+<view class="error-tips" tt:if="{{needErrTips}}"> <image src="../../assets/arrow-up.png"/> 上滑继续浏览其他剧集</view>
+</view>

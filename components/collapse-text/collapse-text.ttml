@@ -1,0 +1,14 @@
+<view class="intercept" style="font-size: {{fontSize}};">
+  <!-- 外层盒子，固定只显示一行 -->
+  <view class="outer" style="height: {{outerHeight}}{{outerHeight == 'auto' ? '' : 'px'}}">
+    <view class="inner {{ show ? '' : 'ellipsis' }} " style="padding-right: {{ show ? '0' : paddingRight }}px; color: {{fontColor}};">
+      {{text}}
+    </view>
+  </view>
+  <view wx:if="{{ heightInfo.realHeight > heightInfo.baseHeight }}" class="collapse {{show ? 'collapse-fold' : ''}}"
+    catchtap="toggle">
+    {{show ? '收起' : '展开'}}
+  </view>
+  <!-- 用于获取一行高度dom -->
+  <view class="get-height">测量用</view>
+</view>

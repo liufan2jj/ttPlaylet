@@ -1,0 +1,35 @@
+.intercept {
+  position: relative;
+}
+
+.outer {
+  overflow: hidden;
+  width: 480rpx;
+}
+
+.get-height {
+  position: absolute;
+  z-index: -9999;
+  top: -100%;
+  left: -100%;
+  height: auto;
+}
+
+.ellipsis {
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.collapse {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: fit-content;
+  color: #FFF;
+}
+.collapse-fold {
+  position: unset;
+}

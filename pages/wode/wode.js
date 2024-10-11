@@ -7,6 +7,7 @@ import {
 } from '../../api/login.js'
 Page({
   data: {
+    imId: "854808918", //客服的抖音号
     rightPosition: "",
     overlayShow: false,
     show: false,
@@ -133,9 +134,20 @@ Page({
       url: '/pages/signPage/signPage',
     })
   },
-  handleContact(e) {
-    console.log(e.detail.path)
-    console.log(e.detail.query)
+  imCallback(e) {
+    console.log("跳转IM客服成功", e.detail);
+  },
+  onimError(e) {
+    console.log("拉起IM客服失败", e.detail);
+    tt.showToast({
+      title: `${e.detail.errMsg}`,
+      success: (res) => {
+
+      },
+      fail: (res) => {
+
+      },
+    });
   },
   // 绑定手机号
   getPhoneNumber(e) {

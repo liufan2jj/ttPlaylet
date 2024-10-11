@@ -2,12 +2,13 @@
 <view class="image-warp">
   <view class="image-title">头像</view>
   <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-    <image mode="scaleToFill" src="{{avatarUrl}}" bindtap="getUserProfile"></image>
+    <image mode="scaleToFill" src="{{userInfo.avatarUrl}}" bindtap="getUserProfile"></image>
   </button>
 </view>
 <!-- 输入框 -->
 <view>
-  <van-field focus="{{true}}" input-align="right" model:value="{{name}}" label="用户名" placeholder="请输入用户名" />
+  <van-field bind:change="onChange" focus="{{true}}" input-align="right" value="{{ name }}" label="用户名"
+    placeholder="请输入用户名" />
 </view>
 <!-- 确认按钮 -->
 <view class="btnsWarp">

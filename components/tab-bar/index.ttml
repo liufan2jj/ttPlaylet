@@ -1,0 +1,12 @@
+<view class="{{options.length>3?'container':''}}"></view>
+<view class="{{options.length===3?'container-small':''}}">
+<view class="tabbar   {{options.length === 3?" tabbar-small":""}}">
+  <view class="{{options.length === 3?'tabbar-small':''}} box {{needLeft?'tabbar-translate-left':''}} {{needRight?'tabbar-translate-right':''}}">
+    <block tt:for="{{options}}">
+      <view class="tabbar-item {{current===index?'active':''}} {{options.length > 5?'tabbar-item-more':''}}"
+        bindtap="handleTabbarClick" data-index="{{index}}">
+        {{options[index]}}</view>
+    </block>
+  </view>
+</view>
+</view>

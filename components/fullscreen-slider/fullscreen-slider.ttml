@@ -1,0 +1,13 @@
+<view class="process_wrap" style="width: {{max}}px;">
+    <view tt:if="{{VideoTimeVisible}}" class="video-time" style="left: {{(max-131)/2}}px;">
+        {{videoCurrentTime}}&nbsp;/&nbsp;{{comVideoTotalTime}}</view>
+    <view class="line" animation="{{lineAnimationData}}" catchtap="moveTo"></view>
+    <view id="active-line" class="active-line" catchtap="moveTo"
+        animation="{{activeLineAnimationData}}" style="width:{{progress}}px; max-width: {{max}}px;"></view>
+    <view class="spot" tt:if="{{progress<=max}}" style="left:{{progress>max?max:progress}}px"
+        animation="{{spotAnimationData}}" bindtouchend="touchend" catchtouchmove="moveTo" catchtouchstart="buttonStart">
+        <view></view>
+    </view>
+    <view hidden="{{isSlideStart}}" class="video-tim-fullscreen">
+        {{videoCurrentTime}}&nbsp;/&nbsp;{{comVideoTotalTime}}</view>
+</view>

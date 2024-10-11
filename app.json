@@ -5,7 +5,6 @@
         "pages/juchang/juchang",
         "pages/wode/wode",
         "pages/signPage/signPage",
-        "components/charge-dialog/charge-dialog",
         "pages/updateUserinfo/updateUserinfo",
         "pages/searchPage/searchPage",
         "pages/rankingList/rankingList",
@@ -15,6 +14,17 @@
         "pages/userAgreement/userAgreement",
         "pages/setPage/setPage",
         "pages/cardPage/cardPage"
+    ],
+    "subpackages": [{
+            "root": "package-video",
+            "name": "packageVideo",
+            "pages": ["pages/video/index"]
+        },
+        {
+            "root": "package-video-player",
+            "name": "packageVideoPlayer",
+            "pages": ["pages/video-player/index"]
+        }
     ],
     "window": {
         "backgroundTextStyle": "light",

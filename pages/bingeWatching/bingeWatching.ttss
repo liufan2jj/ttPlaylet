@@ -1,23 +1,58 @@
-.head {
-    padding: 8px 20px;
+page {
+    background: rgba(246, 246, 246, 1);
 }
 
-.title {
-    font-size: 16px;
-    font-weight: bold;
+.box-down {
+    margin: 0 24rpx;
 }
 
-.flex_top {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 8px 10px;
-    background-color: #fafafa;
+.box-down view {
+    margin-top: 32rpx;
 }
 
-.flex_bottom {
+.item-title {
+    font-size: 30rpx;
+    font-weight: 500;
+    margin-bottom: 24rpx;
+}
+
+.loveSth {
+    width: 704rpx;
+    height: auto;
+}
+
+.ablum-video {
+    width: 704rpx;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16rpx;
+}
+
+.loading-completed {
+    color: rgba(22, 24, 35, 0.3);
+    font-size: 24rpx;
+    text-align: center;
+    margin-top: 32rpx;
+}
+
+.empty {
+    height: 100vh;
+    position: fixed;
+    top: 404rpx;
+    width: 622rpx;
+    font-size: 28rpx;
+    color: rgba(22, 24, 35, 0.6);
+    text-align: center;
+    margin: 0 70rpx;
+}
+
+.empty-icon {
+    width: 472rpx;
+    height: 316rpx;
+    margin: 0 74rpx 42rpx 76rpx;
+}
+
+.empty-icon image {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: 100%;
 }

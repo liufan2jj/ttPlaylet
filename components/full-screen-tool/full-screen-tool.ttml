@@ -1,0 +1,49 @@
+<view class="container" bindtap="conHandler" catchtouchmove="{{false}}">
+    <view class="top-con" animation="{{topConAnimationData}}">
+        <view class="back-icon" bindtap="exitFullscreen">
+            <image src="../../assets/back.png" />
+        </view>
+        <view class="video-title" bindtap="exitFullscreen">
+            <text>{{videoDetail.episodes_name}}</text>&nbsp;&nbsp;<text hidden="{{comVideo}}">第{{videoDetail.episodes_num}}集</text>
+        </view>
+    </view>
+    <view class="bottom-con" animation="{{bottomConAnimationData}}">
+        <view class="progress">
+            <customSlider isFullScreenChangeEpisode="{{isFullScreenChangeEpisode}}" tt:if="{{videoTotalTime}}" isSlideStart="{{isSlideStart}}" bind:slideStart="slideStart"
+                bind:slideEnd="slideEnd" isVideoPlay="{{isVideoPlay}}" bind:progressDone="progressDone"
+                max="{{progressWidth}}" tt:ref="customSliderHandler" videoTotalTime="{{videoTotalTime}}" fullVideoCurrentTimeSec="{{fullVideoCurrentTimeSec}}" />
+        </view>
+        <view hidden="{{isSlideStart}}" class="video-tool">
+            <view class="tool-left">
+                <view class="video-tool-icon" style="position: absolute; left: -10rpx;" catchtap="videoPlay">
+                    <image src="{{isVideoPlay?'../../assets/video-play.png':'../../assets/video-pause.png'}}" />
+                </view>
+                <!-- <view class="change-video" hidden="{{comVideo}}" catchtap="changeVideo">选集</view> -->
+            </view>
+            <view class="tool-right"  hidden="{{comVideo}}" style="margin-right: 32rpx;">
+                <view catchtap="likeHandler" data-videoitem="{{videoDetail}}" class="video-tool-con" style="margin-left: 0; ">
+                    <view class="video-tool-icon">
+                        <image src="{{videoDetail.likeActive? " ../../assets/Like_Shadow.png"
+                        : "../../assets/like.png" }}" />
+                        <text>{{videoDetail.episodesLikes}}</text>
+                    </view>
+                </view>
+                <view catchtap="starHandler" data-videoitem="{{videoDetail}}" class="video-tool-con">
+                    <view class="video-tool-icon">
+                        <image src="{{videoDetail.starActive? " ../../assets/Star_Shadow.png"
+                        : "../../assets/star.png" }}" />
+                        <text>{{videoDetail.episodesChasing}}</text>
+                    </view>
+                </view>
+                <view class="video-tool-con">
+                    <view class="video-tool-icon">
+                        <button style="opacity: 0; position: absolute; top: 0; left: 0;height: 100%;"
+                            catchtap="shareVideo" open-type="share" />
+                        <image src="../../assets/share.png" />
+                        <text>{{shares}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
