@@ -32,14 +32,39 @@
       </view>
       <view class="head-iconWarp">
         <view class="icon_warp" tt:for="{{list}}" tt:key='index'>
-          <image class="head_icon" style="scale:{{signNum+1===item?1.5:1}}" src="{{item>signNum?'../../static/img/jifen1.png':'../../static/img/choosehandle.png'}}"></image>
-          <view tt:if="{{index!=0}}" class='head_line' style="width:{{300/(list.length-1)}}rpx;background:{{item<=signNum?'#FDD24B':''}};">
+          <!-- 当天应签到的样式 -->
+          <view class="next-gold-class {{signNum+1===item?'activeGold':''}}">
+            <!-- 签到当天的金币样式 -->
+            <view tt:if="{{signNum+1===item}}" class="head_icon">
+              <image style="width: 100%;height: 100%;" src="../../static/img/nextsign.png" />
+              <view tt:if="{{item>signNum}}">
+                <text class="sign-integral">+{{integral}}</text>
+              </view>
+            </view>
+            <!-- 签到当天前的金币样式 -->
+            <view tt:elif="{{item<=signNum}}" class="head_icon">
+              <image style="width: 100%;height: 100%;" src="../../static/img/singTrue.png" />
+            </view>
+            <!-- 签到当天后的金币样式 -->
+            <view tt:else class="head_icon">
+              <image style="width: 100%;height: 100%;" src="../../static/img/afterOut.png" />
+              <view>
+                <image class="afterInner_icon" src="../../static/img/afterInner.png" />
+                <text class="sign-integral">+{{integral}}</text>
+              </view>
+            </view>
+          </view>
+          <!-- 签到金币连接线 -->
+          <view tt:if="{{index!=0}}" class='head_line'
+            style="width:{{300/(list.length-1)}}rpx;background:{{item<=signNum?'#FDD24B':''}};">
           </view>
         </view>
       </view>
       <!-- 签到按钮 -->
       <view class='the-btn'>
-        <button style="color:{{signState?'#fffbfb':'#FFFFFF'}};" type='button' class='btn' bindtap='bindSignIn' data-num="{{signNum}}" disabled='{{signState}}' data-min="{{min}}" data-max="{{max}}" data-be="{{be}}">{{signState?'今日已签到':'签到'}}</button>
+        <button style="color:{{signState?'#fffbfb':'#FFFFFF'}};" type='button' class='btn' bindtap='bindSignIn'
+          data-num="{{signNum}}" disabled='{{signState}}' data-min="{{min}}" data-max="{{max}}"
+          data-be="{{be}}">{{signState?'今日已签到,明天再来吧！':'签到'}}</button>
       </view>
       <view class="tips">
         <text>连续签到福利丰厚！未连续签到要重新开始哦~</text>
@@ -55,7 +80,9 @@
           <text class="todes_jifen">+30</text>
           <text class="todes_title">{{item.contentText}}</text>
         </view>
-        <button class="todo_item_btn" style="color:{{item.state?'#F82B25':'#FFFFFF'}};background: {{item.state?'#FEDEDA':'#F82B25'}};" disabled="{{item.state}}">{{item.state==true?'领取' :'去完成'}}</button>
+        <button class="todo_item_btn"
+          style="color:{{item.state?'#F82B25':'#FFFFFF'}};background: {{item.state?'#FEDEDA':'#F82B25'}};"
+          disabled="{{item.state}}">{{item.state==true?'领取' :'去完成'}}</button>
       </view>
     </view>
   </view>
@@ -71,7 +98,8 @@
     </view>
   </view>
   <!-- 签到规则弹窗 -->
-  <van-dialog use-slot title="签到规则" show="{{ show }}" bind:close="onClose">
+  <custom-popup id="popup" title="签到规则" confirmText="确认" background="{{true}}" show="{{ show }}" bind:close="onClose">
+    <!-- 这里放置弹窗内容 -->
     <view class="content_warp">
       <view class="content_text">
         1、每7天为一个签到周期,用户连续签满7天,完成一个签到周期,下次签到开始重新计算新的签到周期。
@@ -83,19 +111,21 @@
         3、若途中漏签,则从第一天开始重新计算新的签到周期
       </view>
     </view>
-  </van-dialog>
+  </custom-popup>
   <!-- 签到成功提示弹窗 -->
-  <van-dialog use-slot title="签到成功" show="{{ signShow }}" bind:close="onsignClose">
+  <custom-popup id="popup" titleFlag="{{false}}" background="{{false}}" copnfirmFlag="{{false}}" show="{{ signShow }}"
+    bind:close="onsignClose">
+    <!-- 这里放置弹窗内容 -->
     <view class="signTips_warp">
-      <view>
-        已累积签到 {{signNum}} 天，恭喜获得
-      </view>
-      <view class="signTips_image_warp">
-        <image class="signTips_image" src="../../static/img/jinbi.png" />
-      </view>
-      <view>
-        5金币
+      <view class="signTips_content">
+        <image class="signTips_image" src="../../static/img/signDialog.png" />
+        <view class="signTips_title">
+          <view class="sign_title_success">签到成功</view>
+          <view class="sign_title_num">已累计签到{{signNum}}天, 恭喜获得</view>
+          <view class="sign_title_gold">+20金币</view>
+          <view class="sign_title_btn" bind:tap="onsignClose">开心收下</view>
+        </view>
       </view>
     </view>
-  </van-dialog>
+  </custom-popup>
 </view>

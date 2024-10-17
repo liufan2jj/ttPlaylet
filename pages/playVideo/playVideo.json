@@ -1,0 +1,6 @@
+{
+    "extends": "ext://industry/playlet-plugin",
+    "usingComponents": {},
+    "transparentTitle": "always",
+    "disableSwipeBack": true
+}

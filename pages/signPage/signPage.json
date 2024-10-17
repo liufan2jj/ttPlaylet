@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index"
+    "custom-popup": "../../components/custom-popup/custom-popup"
   },
   "navigationBarTitleText": "签到",
   "navigationBarTextStyle": "white",

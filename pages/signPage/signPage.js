@@ -91,6 +91,14 @@ Page({
     });
   },
   onsignClose() {
+    if (this.data.signNum == this.data.max) {
+      const reduce = this.data.n - 1
+      this.data.min = this.data.signNum + 1
+      this.data.max = this.data.signNum + reduce
+      this.setData({
+        list: this.generateArray(this.data.min, this.data.max)
+      })
+    }
     this.setData({
       signShow: false
     });

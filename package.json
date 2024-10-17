@@ -11,5 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "@vant/weapp": "^1.11.6"
-  }
+  },
+  "industrySDK": true
 }

@@ -3,20 +3,24 @@
   <button class="expire_btn">立即订阅</button>
   <view class="expire_close">×</view>
 </view>
-<view class="list_warp">
-  <view wx:for="{{list}}" wx:key="index" class="xx">
-    <view class="xx_warp">
-      <image src="{{item.img}}" class="xx_tx"></image>
-      <view class="xx_userWarp">
-        <text class="xx_mz">{{item.title}}</text>
-        <view>
-          <text class="xx_title">{{item.desc}}</text>
+<view class="card-content">
+  <view class="list_warp" tt:for="{{list}}" tt:key="index">
+    <view class="xx">
+      <view class="xx_warp">
+        <image src="../../static/img/cardImg.png" class="xx_tx" />
+        <view class="xx_userWarp">
+          <text class="xx_mz">{{item.title}}</text>
+          <view>
+            <text class="xx_title">{{item.subtitle}}</text>
+          </view>
         </view>
       </view>
+      <view class="btns">
+        <button data-index="{{index}}" data-id="{{item.id}}" bind:tap="onUsecard" disabled="{{item.status}}"
+          class="custom-button {{item.status? 'active' : 'defaut'}}">{{item.status?'已激活':'立即使用'}}</button>
+      </view>
     </view>
-    <view class="btns">
-      <button data-index="{{index}}" bind:tap="onUsecard" disabled="{{item.state}}" class="custom-button {{item.state? 'active' : 'defaut'}}">{{item.state?'已激活':'立即使用'}}</button>
-    </view>
+    <view tt:if="{{item.end_at}}" class="end-time">{{item.end_at}}</view>
   </view>
 </view>
 <van-dialog show-confirm-button="{{false}}" use-slot show="{{ show }}" bind:getuserinfo="getUserInfo">

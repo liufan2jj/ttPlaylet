@@ -1,0 +1,35 @@
+.popup-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 9999;
+}
+
+.popup-title {
+    text-align: center;
+    font-weight: 500;
+    padding: 12px 0;
+}
+
+.popup-close-btn {
+    text-align: center;
+    color: #ca1111;
+}
+
+.background {
+    background: #fff;
+}

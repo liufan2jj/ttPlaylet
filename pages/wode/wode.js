@@ -1,8 +1,5 @@
 import request from '../../utils/loginInfo'
 import {
-  compareDates
-} from '../../utils/validate'
-import {
   userCenter
 } from '../../api/login.js'
 Page({
@@ -12,9 +9,9 @@ Page({
     overlayShow: false,
     show: false,
     avatarUrl: "",
-    name: "--",
-    id: "--",
-    view_point: "--",
+    name: "xx",
+    id: "000000",
+    view_point: "0",
     userInfo: {},
     vipTimeTips: "",
     vip_type: 0,
@@ -156,14 +153,6 @@ Page({
     console.log(e.detail.errMsg) // 回调信息（成功失败都会返回）
     console.log(e.detail.errno) // 错误码（失败时返回）
   },
-  //退出登录
-  loginOut() {
-    tt.removeStorageSync('token')
-    tt.clearStorage()
-    tt.redirectTo({
-      url: '/pages/login/login'
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -189,7 +178,6 @@ Page({
             view_point: data.view_point,
             vip_type: data.vip_type,
             vip_end_time: data.vip_end_time,
-            vipTimeTips: compareDates(data.vip_end_time)
           })
         }
       } else {

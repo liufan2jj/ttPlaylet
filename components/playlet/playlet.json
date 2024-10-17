@@ -1,0 +1,5 @@
+{
+  "extends": "ext://industry/playlet-plugin",
+  "usingComponents": {},
+  "isPageExtension": true
+}

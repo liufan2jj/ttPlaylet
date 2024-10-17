@@ -13,17 +13,22 @@
         "pages/transactionDetails/transactionDetails",
         "pages/userAgreement/userAgreement",
         "pages/setPage/setPage",
-        "pages/cardPage/cardPage"
+        "pages/cardPage/cardPage",
+        "pages/playVideo/playVideo"
     ],
     "subpackages": [{
             "root": "package-video",
             "name": "packageVideo",
-            "pages": ["pages/video/index"]
+            "pages": [
+                "pages/video/index"
+            ]
         },
         {
             "root": "package-video-player",
             "name": "packageVideoPlayer",
-            "pages": ["pages/video-player/index"]
+            "pages": [
+                "pages/video-player/index"
+            ]
         }
     ],
     "window": {
@@ -44,14 +49,14 @@
             {
                 "pagePath": "pages/bingeWatching/bingeWatching",
                 "text": "追剧",
-                "iconPath": "./static/img/zhuiju.png",
-                "selectedIconPath": "./static/img/zhuiju_after.png"
+                "iconPath": "./static/img/juchang.png",
+                "selectedIconPath": "./static/img/juchang_after.png"
             },
             {
                 "pagePath": "pages/juchang/juchang",
                 "text": "剧场",
-                "iconPath": "./static/img/juchang.png",
-                "selectedIconPath": "./static/img/juchang_after.png"
+                "iconPath": "./static/img/zhuiju.png",
+                "selectedIconPath": "./static/img/zhuiju_after.png"
             },
             {
                 "pagePath": "pages/wode/wode",

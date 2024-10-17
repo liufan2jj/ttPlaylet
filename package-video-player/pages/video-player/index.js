@@ -1,6 +1,13 @@
-import { getVideoList } from '../../../api/common';
-import { formatNumberToK, rpxToPx } from '../../../utils/index';
-import { VideoSwiper } from '../../../utils/video-swiper';
+import {
+  getVideoList
+} from '../../../api/common';
+import {
+  formatNumberToK,
+  rpxToPx
+} from '../../../utils/index';
+import {
+  VideoSwiper
+} from '../../../utils/video-swiper';
 
 function sleep() {
   return new Promise(resolve => {
@@ -40,9 +47,17 @@ Page({
   },
   async onLoad(option) {
     // 获取窗口高度
-    const { ablum_id, episodes_id } = option;
-    const { windowHeight, windowWidth } = app.globalData?.systemInfo;
-    const { Hasbindgetsource = false } = app?.globalData;
+    const {
+      ablum_id,
+      episodes_id
+    } = option;
+    const {
+      windowHeight,
+      windowWidth
+    } = app.globalData?.systemInfo;
+    const {
+      Hasbindgetsource = false
+    } = app?.globalData;
     console.log(app.globalData?.systemInfo);
     this.setData({
       windowHeight,
@@ -109,7 +124,9 @@ Page({
   swiperChange: function (e) {
     this.videoSwiper.onchange(e);
 
-    const { currentAblum } = this.data;
+    const {
+      currentAblum
+    } = this.data;
 
     let currentIndex = this.videoSwiper.currentIndex;
     let currentVideo = this.videoSwiper.getCurrentVideo();
@@ -120,7 +137,6 @@ Page({
         res?.hidePauseIcon()
       });
     }
-
     if (currentAblum) {
       tt.setNavigationBarTitle({
         title: `${currentAblum.ablum_name}  第${currentIndex + 1}集`,
@@ -129,7 +145,9 @@ Page({
   },
   // 下一个视频
   nextVideo(e) {
-    const { isFullScreen } = this.data;
+    const {
+      isFullScreen
+    } = this.data;
 
     if (isFullScreen) {
       return;
@@ -137,7 +155,9 @@ Page({
 
     this.videoSwiper.onEnded(e);
 
-    const { currentAblum } = this.data;
+    const {
+      currentAblum
+    } = this.data;
 
     let currentIndex = this.videoSwiper.currentIndex;
 
@@ -151,14 +171,20 @@ Page({
   // 视频暂停/继续播放
   videoPauseOrPlay(e) {
     console.log('customSlider videoPlay', e);
-    const { videoPause } = e.detail;
+    const {
+      videoPause
+    } = e.detail;
     this.videoSwiper[videoPause ? 'play' : 'pause']();
   },
 
   // 点赞
   likeHandler(e) {
-    const { allVideoData } = this.data;
-    const { videoitem } = e.currentTarget.dataset;
+    const {
+      allVideoData
+    } = this.data;
+    const {
+      videoitem
+    } = e.currentTarget.dataset;
     const currentVideo = allVideoData.find(i => i.eid === videoitem.eid);
 
     currentVideo.likeActive = !currentVideo.likeActive;
@@ -205,8 +231,13 @@ Page({
       },
     });
 
-    const { allVideoData,currentAblum } = this.data;
-    const { videoitem } = e.currentTarget.dataset;
+    const {
+      allVideoData,
+      currentAblum
+    } = this.data;
+    const {
+      videoitem
+    } = e.currentTarget.dataset;
     const currentVideo = allVideoData.find(i => i.eid === videoitem.eid);
 
     currentVideo.starActive = !currentVideo.starActive;
@@ -234,8 +265,12 @@ Page({
   },
   // 分享
   shareVideo(e) {
-    const { allVideoData } = this.data;
-    const { videoitem } = e.currentTarget.dataset;
+    const {
+      allVideoData
+    } = this.data;
+    const {
+      videoitem
+    } = e.currentTarget.dataset;
     const currentVideo = allVideoData.find(i => i.eid === videoitem.eid);
     currentVideo.episodesShares = formatNumberToK(
       currentVideo.episodes_shares + 1,
@@ -250,8 +285,11 @@ Page({
   },
   // 选集
   onChangeEpisode(e) {
-    const { episodeitem } = e.detail;
+    const {
+      episodeitem
+    } = e.detail;
     let episode = episodeitem.episodes_num - 1;
+    console.log(episode, 'ssss')
     this.videoSwiper.setStart(episode);
     // 需要根据选中的信息确定swier滑到哪里
     this.setData({
@@ -261,9 +299,11 @@ Page({
   // video-player binderror 回调
   error(e) {
     console.warn('video-player error', e);
-    const { episode } = e.target.dataset;
+    const {
+      episode
+    } = e.target.dataset;
     let playInfo = this.data.playInfo;
-    
+
     playInfo[episode].error = true;
     tt.showToast({
       title: `${e.detail.errMsg}`,
@@ -275,8 +315,13 @@ Page({
   },
   // video-player bindtimeupdate 回调
   timeUpdateHandler(e) {
-    const { currentTime, duration } = e.detail;
-    const { episode } = e.target.dataset;
+    const {
+      currentTime,
+      duration
+    } = e.detail;
+    const {
+      episode
+    } = e.target.dataset;
     let playInfo = this.data.playInfo;
 
     playInfo[episode].videoDuration = Math.floor(duration);
@@ -294,7 +339,9 @@ Page({
   },
   // 进度条滑动结束事件
   slideEnd(e) {
-    const { videoCurrentTimeSec } = e.detail;
+    const {
+      videoCurrentTimeSec
+    } = e.detail;
     this.videoSwiper.getVideoContext()?.seek(videoCurrentTimeSec);
     this.setData({
       isSlideStart: false,
@@ -302,13 +349,17 @@ Page({
   },
   fullScreenSlideEnd(e) {
     console.log('fullScreenSlideEnd', e);
-    const { videoCurrentTimeSec } = e.detail;
+    const {
+      videoCurrentTimeSec
+    } = e.detail;
     this.videoSwiper.getVideoContext()?.seek(videoCurrentTimeSec);
   },
   // 首次加载
   async formatVideoData(aid, eid) {
     // 如果携带剧集id进来的话，需要计算他属于那个pageSize,
-    const { videoPlayerList } = await getVideoList();
+    const {
+      videoPlayerList
+    } = await getVideoList();
     // 当前剧信息
     const currentAblum = videoPlayerList.find(i => i.ablum_id == aid);
     // 当前剧集
@@ -386,12 +437,16 @@ Page({
   // 全屏下，视频暂停/继续播放
   fullScreenVideoPause(e) {
     console.log('fullScreenVideoPause', e.detail);
-    const { isVideoPlay } = e.detail;
+    const {
+      isVideoPlay
+    } = e.detail;
     this.videoSwiper.getVideoContext()?.[isVideoPlay ? 'pause' : 'play']();
   },
   // 全屏下点击出现全屏工具栏
   onTapVideo(e) {
-    const { isFullScreen } = this.data;
+    const {
+      isFullScreen
+    } = this.data;
     if (isFullScreen) {
       this.setData({
         showFullScreenTool: true,

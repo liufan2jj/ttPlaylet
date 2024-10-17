@@ -1,234 +1,161 @@
 page {
-    background: #F6F6F6;
-  }
-  
-  .top_warp {
-    background-color: #F41919;
-    margin-bottom: 20px;
-  }
-  
-  .top_warp::after {
-    width: 50px;
-    height: 50px;
-    background-image: linear-gradient(212deg, #cccccc 50%, rgba(255, 255, 255, 0) 50%), linear-gradient(148deg, #cccccc 50%, rgba(255, 255, 255, 0) 50%);
-  }
-  
-  .xx {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px;
-    height: 80px;
-  }
-  
-  .xx_warp {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .xx_tx {
-    width: 141rpx;
-    height: 141rpx;
-    border-radius: 50%;
-    border: 1px solid #efefef;
-  }
-  
-  .xx_userWarp {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-left: 8px;
-  }
-  
-  .xx_mz {
-    font-weight: 400;
-    font-size: 27rpx;
-    color: #FEFEFE;
-  }
-  
-  .xx_num {
-    font-weight: 400;
-    font-size: 27rpx;
-    color: #FEFEFE;
-  }
-  
-  .xx_title {
-    font-weight: 400;
-    font-size: 27rpx;
-    color: #FEFEFE;
-  }
-  
-  .xx_copy {
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-    margin-left: 4px;
-  }
-  
-  /* 充值金币按钮 */
-  .btns {
-    display: flex;
-    align-items: center;
-  }
-  
-  .custom-button {
-    font-weight: 400;
-    font-size: 35rpx;
-    color: #F41919;
-    line-height: 63rpx;
-    width: 197rpx;
-    height: 63rpx;
-    background: #FFFFFF;
-    border-radius: 32rpx 32rpx 32rpx 32rpx;
-    text-align: center;
-    font-style: normal;
-    text-transform: none;
-  }
-  
-  .clip_left {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 345rpx;
-    height: 11px;
-    background: #F6F6F6;
-    clip-path: polygon(0 0, 0 100%, 100% 100%);
-  }
-  
-  .clip_right {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 345rpx;
-    height: 11px;
-    background: #F6F6F6;
-    clip-path: polygon(100% 100%, 100% 0, 0 100%);
-  }
-  
-  /* banner图片 */
-  .banner_warp {
-    width: 691rpx;
-    height: 166rpx;
-    background: radial-gradient(0% 0% at 0% 0%, #F6DB98 0%, #F7EBD3 0%);
-    border-radius: 14rpx 14rpx 0rpx 0rpx;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    margin: 0 auto;
-    top: 11px;
-  }
-  
-  .banner_content {
-    display: flex;
-    line-height: 26px;
-    flex-direction: column;
-    color: rgb(58, 56, 56);
-    padding: 10px;
-  }
-  
-  .banner_title {
-    font-weight: bold;
-    font-size: 42rpx;
-    color: #AB660B;
-  }
-  
-  .banner_text {
-    font-weight: 400;
-    font-size: 28rpx;
-    color: #AB660B;
-  }
-  
-  .banner_img {
-    width: 114px;
-    height: 100px;
-    transform: rotate(13deg);
-    position: absolute;
-    right: 2px;
-    opacity: 0.44;
-    top: 16px;
-  }
-  
-  /* 按钮列表 */
-  .van-cell-warp {
-    width: 691rpx;
-    background: #FEFEFE;
-    border-radius: 14rpx 14rpx 14rpx 14rpx;
-    margin: 0 auto;
-    margin-bottom: 146rpx;
-  }
-  
-  .title-class {
-    display: flex;
-    align-items: center;
-  }
-  
-  .custom-icon {
-    width: 56rpx;
-    height: 56rpx;
-  }
-  
-  .van-cell-text {
-    margin-left: 4px;
-    font-weight: 400;
-    font-size: 33rpx;
-    color: #020000;
-  }
-  
-  .content-btn {
-    position: absolute;
-    top: 0;
-    left: 0px;
-    opacity: 0;
-    width: 100%;
-    padding: 0;
-    height: 100%;
-  }
-  
-  .overlay_wrapper {
-    width: 100%;
-    height: 100%;
-    /* position: relative; */
-  }
-  
-  .overlay_img {
-    position: absolute;
-    top: 0;
-  }
-  
-  /* 底部图片 */
-  .bottom_content {
-    position: absolute;
-    bottom: env(safe-area-inset-bottom);
-    margin: 0 auto;
-    width: 100%;
-  }
-  
-  .bottom_warp {
-    margin: 0 auto;
-    width: 717rpx;
-    height: 146rpx;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background: radial-gradient(0% 0% at 0% 0%, #72B0FF 0%, #2664FE 0%);
-    box-shadow: inset 0rpx 1rpx 29rpx 1rpx #1446B4;
-    border-radius: 73rpx 73rpx 73rpx 73rpx;
-  }
-  
-  .bottom {
-    display: flex;
-    line-height: 74rpx;
-    flex-direction: column;
-    color: #fff;
-  }
-  
-  .bottom_title {
-    font-weight: bold;
-    font-size: 18px;
-  }
-  
-  .bottom_img {
-    width: 60px;
-    height: 60px;
-  }
+  background: #F6F6F6;
+}
+
+.top_warp {
+  background-color: #F41919;
+  margin-bottom: 20px;
+}
+
+.top_warp::after {
+  width: 50px;
+  height: 50px;
+  background-image: linear-gradient(212deg, #cccccc 50%, rgba(255, 255, 255, 0) 50%), linear-gradient(148deg, #cccccc 50%, rgba(255, 255, 255, 0) 50%);
+}
+
+.xx {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  height: 80px;
+}
+
+.xx_warp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.xx_tx {
+  width: 141rpx;
+  height: 141rpx;
+  border-radius: 50%;
+  border: 1px solid #efefef;
+}
+
+.xx_userWarp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 8px;
+}
+
+.xx_mz {
+  font-weight: 400;
+  font-size: 27rpx;
+  color: #FEFEFE;
+}
+
+.xx_num {
+  font-weight: 400;
+  font-size: 27rpx;
+  color: #FEFEFE;
+}
+
+.xx_title {
+  font-weight: 400;
+  font-size: 27rpx;
+  color: #FEFEFE;
+}
+
+.xx_copy {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+/* 充值金币按钮 */
+.btns {
+  display: flex;
+  align-items: center;
+}
+
+.custom-button {
+  font-weight: 400;
+  font-size: 35rpx;
+  color: #F41919;
+  line-height: 63rpx;
+  width: 197rpx;
+  height: 63rpx;
+  background: #FFFFFF;
+  border-radius: 32rpx 32rpx 32rpx 32rpx;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+
+/* banner图片 */
+.banner_warp {
+  height: 166rpx;
+  text-align: center;
+  position: relative;
+}
+
+.banner_vip_img {
+  position: absolute;
+  transform: translate(-50%, 22rpx);
+  width: 692rpx;
+  height: 166rpx;
+}
+
+/* 按钮列表 */
+.van-cell-warp {
+  width: 691rpx;
+  background: #FEFEFE;
+  border-radius: 14rpx 14rpx 14rpx 14rpx;
+  margin: 0 auto;
+  margin-bottom: 146rpx;
+}
+
+.van-cell-img {
+  width: 41rpx;
+  height: 41rpx;
+  margin-right: 12rpx;
+}
+
+.van-cell-text {
+  display: flex;
+  align-items: center;
+}
+
+.van-cell-text>text {
+  font-weight: 400;
+  font-size: 36rpx;
+  color: #020000;
+  line-height: 36rpx;
+}
+
+.content-btn {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  opacity: 0;
+  width: 100%;
+  padding: 0;
+  height: 100%;
+}
+
+.overlay_wrapper {
+  width: 100%;
+  height: 100%;
+  /* position: relative; */
+}
+
+.overlay_img {
+  position: absolute;
+  top: 0;
+}
+
+/* 底部图片 */
+.bottom_content {
+  position: absolute;
+  bottom: env(safe-area-inset-bottom);
+  width: 100vw;
+  text-align: center;
+}
+
+.bottom_img {
+  width: 722rpx;
+  height: 152rpx;
+}

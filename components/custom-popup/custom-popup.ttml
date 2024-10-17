@@ -1,0 +1,9 @@
+<view class="popup-mask" catchtouchmove="preventTouchMove" wx:if="{{show}}"></view>
+<view class="popup-container {{background==true?'background':''}}" wx:if="{{show}}">
+    <!-- 弹窗标题 -->
+    <view tt:if="{{titleFlag==true}}" class="popup-title">{{title}}</view>
+    <!-- 弹窗内容 -->
+    <slot></slot>
+    <!-- 关闭按钮 -->
+    <button tt:if="{{copnfirmFlag==true}}" class="popup-close-btn" bindtap="closePopup">{{copnfirmText}}</button>
+</view>
