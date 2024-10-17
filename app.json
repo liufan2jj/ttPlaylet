@@ -65,5 +65,9 @@
                 "selectedIconPath": "./static/img/wode_after.png"
             }
         ]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
     }
 }
